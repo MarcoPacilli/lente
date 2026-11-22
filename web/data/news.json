@@ -1,107 +1,70 @@
 {
   "schema_version": 2,
   "version": "0.2",
-  "generated_at": "2026-11-22T14:04:38Z",
-  "last_success_at": "2026-11-22T14:04:38Z",
+  "generated_at": "2026-11-22T14:36:25Z",
+  "last_success_at": "2026-11-22T14:36:25Z",
   "origin": "rss",
   "articles": [
     {
-      "id": "3d11fb1cb1a53fa666d3d7f1",
-      "title": "Riscatto delle tradizioni culinarie indigene in Nepal",
-      "summary": "Sanjib Chaudhary di Global Voices ha intervistato Binti Gurung, una storica del food e fondatrice della Fondazione Natural Roots, per discutere del suo lavoro sulle tradizioni culinarie del Nepal.",
-      "category": "Scienza",
-      "region": "Non determinata",
-      "published_at": "2026-11-21T06:12:59Z",
+      "id": "263194541dc2a29e32715730",
+      "title": "Le continue esercitazioni per riconoscere l'ecocidio all'Corte Internazionale di Criminalità",
+      "summary": "Per i paesi che hanno iniziato questa, i rischi non sono abstracti. Essi chiedono al mondo di costruire l'infrastruttura per processare e prevenire il danneggiamento che già sta accadendo a loro.",
+      "category": "Società",
+      "region": "Oceania",
+      "published_at": "2026-11-20T18:05:05Z",
       "mode": "ai",
       "claims": [],
       "context": "Il feed non fornisce contesto sufficiente per una ricostruzione: consulta la fonte originale.",
       "uncertainty": "Sintesi automatica non revisionata, basata solo sui metadati RSS. Le etichette sono automatiche: controlla le evidenze e l’originale.",
       "sources": [
         {
-          "id": "3d11fb1cb1a53fa666d3d7f1",
-          "url": "https://globalvoices.org/2026/11/21/rereclaiming-indigenous-culinary-histories-in-nepal/",
-          "title": "Reclaiming Indigenous culinary histories in Nepal",
-          "description": "Sanjib Chaudhary of Global Voices caught up with Binti Gurung, a food historian and founder of Natural Roots Foundation, to talk about her work on the food heritage of Nepal.",
-          "published_at": "2026-11-21T06:12:59Z",
+          "id": "263194541dc2a29e32715730",
+          "url": "https://globalvoices.org/2026/11/20/the-ongoing-efforts-to-get-ecocide-recognized-at-the-international-criminal-court/",
+          "title": "The ongoing efforts to get ecocide recognized at the International Criminal Court",
+          "description": "For the nations that started this, the stakes are not abstract. They are asking the world to build infrastructure to prosecute and prevent harm that is already happening to them.",
+          "published_at": "2026-11-20T18:05:05Z",
           "language": "en",
           "publisher": "Global Voices · English",
           "group": "Global Voices",
-          "author": "Sanjib Chaudhary",
+          "author": "Sydney Allen",
           "source_id": "gv-en",
           "license": "https://creativecommons.org/licenses/by/3.0/",
           "terms": "https://globalvoices.org/about/global-voices-attribution-policy/",
           "ai_allowed": true,
           "tags": [
-            "English",
-            "Ethnicity & Race",
+            "D.R. of Congo",
+            "Environment",
             "Feature",
-            "Food",
-            "History",
-            "Indigenous",
-            "Nepal",
-            "South Asia",
-            "Women & Gender"
+            "Fiji",
+            "Governance",
+            "Human Rights",
+            "International Relations",
+            "Law",
+            "Oceania",
+            "Samoa",
+            "Tuvalu",
+            "U.S.A.",
+            "Vanuatu",
+            "WORLD"
           ]
         }
       ],
       "related_sources": [],
       "rank": 1
-    },
-    {
-      "id": "4acc0a6113d706ec0d447173",
-      "title": "En Kazajistán, las mujeres rurales se organizan en comunidad para mejorar su calidad de vida.",
-      "summary": "La cooperativa planeada apoyaría la promoción conjunta, el aprendizaje compartido y la búsqueda de oportunidades de financiamiento para pozos inteligentes o infraestructura de riego compartida.",
-      "category": "Scienza",
-      "region": "Americhe",
-      "published_at": "2026-11-21T06:00:39Z",
-      "mode": "ai",
-      "claims": [],
-      "context": "Il feed non fornisce contesto sufficiente per una ricostruzione: consulta la fonte originale.",
-      "uncertainty": "Sintesi automatica non revisionata, basata solo sui metadati RSS. Le etichette sono automatiche: controlla le evidenze e l’originale.",
-      "sources": [
-        {
-          "id": "4acc0a6113d706ec0d447173",
-          "url": "https://es.globalvoices.org/2026/11/21/en-kazajistan-las-mujeres-rurales-se-organizan-en-comunidad-para-mejorar-su-calidad-de-vida/",
-          "title": "En Kazajistán, las mujeres rurales se organizan en comunidad para mejorar su calidad de vida.",
-          "description": "La cooperativa planeada apoyaría la promoción conjunta, el aprendizaje compartido y la búsqueda de oportunidades de financiamiento para pozos inteligentes o infraestructura de riego compartida.",
-          "published_at": "2026-11-21T06:00:39Z",
-          "language": "es",
-          "publisher": "Global Voices · Español",
-          "group": "Global Voices",
-          "author": "Guadalupe Rufino",
-          "source_id": "gv-es",
-          "license": "https://creativecommons.org/licenses/by/3.0/",
-          "terms": "https://globalvoices.org/about/global-voices-attribution-policy/",
-          "ai_allowed": true,
-          "tags": [
-            "Activismo digital",
-            "Asia central y Cáucaso",
-            "Economía y negocios",
-            "Inglés",
-            "Kazajistán",
-            "Kazajo",
-            "Medios ciudadanos",
-            "Mujer y género",
-            "Trabajo"
-          ]
-        }
-      ],
-      "related_sources": [],
-      "rank": 2
     }
   ],
   "warnings": [
+    "Alcuni feed non sono disponibili: copertura parziale.",
     "Alcuni articoli in lingua straniera esclusi: traduzione italiana non disponibile o non validata.",
     "Pluralità limitata: meno di tre gruppi editoriali presenti.",
-    "Aree non coperte in questa edizione: Europa, Africa, Asia, Medio Oriente, Oceania."
+    "Aree non coperte in questa edizione: Europa, Africa, Asia, Medio Oriente, Americhe."
   ],
   "coverage": {
     "regions": {
-      "Non determinata": 1,
-      "Americhe": 1
+      "Oceania": 1
     },
     "publishers": {
-      "Global Voices": 2
+      "Global Voices": 1
     }
   },
   "pipeline": {
@@ -141,28 +104,51 @@
         "status": "not_modified",
         "accepted": 0,
         "rejected": {}
+      },
+      {
+        "id": "elsalto-es",
+        "name": "El Salto · Edición General",
+        "language": "es",
+        "feed": "https://www.elsaltodiario.com/general/feed",
+        "status": "error",
+        "accepted": 0,
+        "error": "HTTPError: HTTP Error 406: Not Acceptable"
       }
     ],
     "collected": 6,
     "duplicates_removed": 0,
     "skipped": {
-      "translation_failed": 4
+      "translation_failed": 5
     },
     "ai_errors": [
       {
         "id": "8a79b70e79b0c61f5aeaa2e1",
-        "error": "ValueError: Claim non valido"
-      },
-      {
-        "id": "6d100a6de72de8d8f37a9a30",
+        "title": "Breaking the silence: Pratishta’s journey from childhood abuse to advocacy",
+        "url": "https://globalvoices.org/2026/11/22/breaking-the-silence-pratishtas-journey-from-childhood-abuse-to-advocacy/",
         "error": "ValueError: Evidenza non riscontrata"
       },
       {
-        "id": "263194541dc2a29e32715730",
-        "error": "ValueError: Claim non valido"
+        "id": "6d100a6de72de8d8f37a9a30",
+        "title": "Growing up displaced in Cameroon after ten years of conflict",
+        "url": "https://globalvoices.org/2026/11/21/growing-up-displaced-in-cameroon-after-ten-years-of-conflict/",
+        "error": "ValueError: Evidenza non riscontrata"
+      },
+      {
+        "id": "3d11fb1cb1a53fa666d3d7f1",
+        "title": "Reclaiming Indigenous culinary histories in Nepal",
+        "url": "https://globalvoices.org/2026/11/21/rereclaiming-indigenous-culinary-histories-in-nepal/",
+        "error": "ValueError: Evidenza non riscontrata"
       },
       {
         "id": "b5d2535b7c71fa190dd4c267",
+        "title": "Cuando las grandes empresas tecnológicas se convierte en herramienta de control estatal en Kenia",
+        "url": "https://es.globalvoices.org/2026/11/22/cuando-las-grandes-empresas-tecnologicas-se-convierte-en-herramienta-de-control-estatal-en-kenia/",
+        "error": "ValueError: Evidenza non riscontrata"
+      },
+      {
+        "id": "4acc0a6113d706ec0d447173",
+        "title": "En Kazajistán, las mujeres rurales se organizan en comunidad para mejorar su calidad de vida.",
+        "url": "https://es.globalvoices.org/2026/11/21/en-kazajistan-las-mujeres-rurales-se-organizan-en-comunidad-para-mejorar-su-calidad-de-vida/",
         "error": "ValueError: Evidenza non riscontrata"
       }
     ],
