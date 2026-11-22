@@ -1,6 +1,6 @@
 {
-  "attempted_at": "2026-11-22T13:55:06Z",
-  "success": false,
+  "attempted_at": "2026-11-22T14:04:38Z",
+  "success": true,
   "sources": [
     {
       "id": "gv-it",
@@ -40,39 +40,31 @@
     }
   ],
   "collected": 6,
-  "published": 0,
+  "published": 2,
   "skipped": {
-    "translation_failed": 6
+    "translation_failed": 4
   },
   "ai_errors": [
     {
       "id": "8a79b70e79b0c61f5aeaa2e1",
-      "error": "ValueError: Evidenza non riscontrata"
+      "error": "ValueError: Claim non valido"
     },
     {
       "id": "6d100a6de72de8d8f37a9a30",
       "error": "ValueError: Evidenza non riscontrata"
     },
     {
-      "id": "3d11fb1cb1a53fa666d3d7f1",
-      "error": "ValueError: Evidenza non riscontrata"
-    },
-    {
       "id": "263194541dc2a29e32715730",
-      "error": "ValueError: Evidenza non riscontrata"
+      "error": "ValueError: Claim non valido"
     },
     {
       "id": "b5d2535b7c71fa190dd4c267",
-      "error": "ValueError: Evidenza non riscontrata"
-    },
-    {
-      "id": "4acc0a6113d706ec0d447173",
       "error": "ValueError: Evidenza non riscontrata"
     }
   ],
   "warnings": [
     "Alcuni articoli in lingua straniera esclusi: traduzione italiana non disponibile o non validata.",
     "Pluralità limitata: meno di tre gruppi editoriali presenti.",
-    "Aree non coperte in questa edizione: Europa, Africa, Asia, Medio Oriente, Americhe, Oceania."
+    "Aree non coperte in questa edizione: Europa, Africa, Asia, Medio Oriente, Oceania."
   ]
 }
