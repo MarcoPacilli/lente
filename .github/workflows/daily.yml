@@ -18,6 +18,7 @@ jobs:
       contents: write
     outputs:
       success: ${{ steps.update.outputs.success }}
+      pages_artifact_id: ${{ steps.pages.outputs.artifact_id }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -62,34 +63,38 @@ jobs:
             git commit -m 'Aggiorna edizione e stato delle fonti'
             git push
           fi
-      - uses: actions/upload-artifact@v4
+      - name: Verifica i file del sito
+        run: |
+          test -s web/index.html
+          test -s web/app.js
+          test -s web/styles.css
+          test -s web/data/news.json
+      - name: Prepara il pacchetto GitHub Pages
+        id: pages
+        uses: actions/upload-pages-artifact@v3
         with:
-          name: lente-web
+          name: github-pages
           path: web
           retention-days: 1
   deploy:
     needs: update
-    if: needs.update.result == 'success'
+    if: needs.update.result == 'success' && needs.update.outputs.pages_artifact_id != ''
     runs-on: ubuntu-latest
     timeout-minutes: 10
     permissions:
+      actions: read
       pages: write
       id-token: write
     environment:
       name: github-pages
       url: ${{ steps.deploy.outputs.page_url }}
     steps:
-      - uses: actions/download-artifact@v4
-        with:
-          name: lente-web
-          path: web
       - uses: actions/configure-pages@v5
-      - uses: actions/upload-pages-artifact@v3
-        with:
-          path: web
       - name: Pubblica
         id: deploy
         uses: actions/deploy-pages@v4
+        with:
+          artifact_name: github-pages
       - name: Segnala un aggiornamento fallito dopo aver pubblicato lo stato
         if: needs.update.outputs.success != 'true'
         run: |
