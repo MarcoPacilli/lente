@@ -1,0 +1,2 @@
+# Solo test browser, non necessari per usare Lente o raccogliere RSS.
+playwright>=1.49,<2

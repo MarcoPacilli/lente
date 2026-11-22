@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f8fa">
+  <meta name="description" content="Un lettore personale di notizie internazionali: notizie sintetiche, fatti essenziali e fonti originali.">
+  <title>Lente — Il mondo, in breve</title>
+  <link rel="stylesheet" href="styles.css">
+
+</head>
+<body>
+<header class="topbar"><div class="shell topinner">
+  <a class="brand" href="#inizio" aria-label="Lente - torna all'inizio"><span class="mark">L.</span><span class="wordmark">lente.</span><span class="tagline">Le notizie, senza rumore.</span></a>
+  <div class="top-right"><span class="top-demo">Versione 0.2</span><span class="date-pill">Caricamento…</span></div>
+</div></header>
+<main id="inizio" class="shell">
+  <section class="hero"><div><div class="eyebrow">IL TUO BRIEFING QUOTIDIANO</div><h1>Il mondo, in breve.</h1><p>Le notizie essenziali raccontate con chiarezza. Fatti separati dalle interpretazioni, riassunti concisi e fonti originali sempre a portata di clic.</p></div>
+    <div class="brief-card"><div class="brief-flag">UNA PANORAMICA RAPIDA</div><h2>Hai cinque minuti?</h2><p>Le 5 storie in primo piano, senza perdere il contesto.</p><button id="briefBtn" class="btn-light" type="button">Apri il briefing <span aria-hidden="true">↗</span></button></div>
+  </section>
+  <section class="stats" aria-label="Statistiche del notiziario"><div class="stat"><b id="statStories">0</b><span>notizie disponibili</span></div><div class="stat"><b id="statTopics">0</b><span>categorie</span></div><div class="stat"><b id="statSaved">0</b><span>salvate</span></div><div class="static-note" id="editionKind">Lettore personale · senza pubblicità</div></section>
+  <section class="status-bar" id="updateStatus" aria-live="polite"><div class="status-head"><span id="updateText">Caricamento del notiziario…</span><button class="text-button" id="refreshBtn" type="button">Ricarica edizione</button></div><p id="coverageText"></p></section>
+  <div class="workspace">
+    <section class="panel" aria-label="Elenco notizie"><div class="controls"><div class="controlrow"><div class="tabs" role="group" aria-label="Modalità di visualizzazione"><button type="button" class="tab active" data-view="all">Tutte</button><button type="button" class="tab" data-view="brief">Essenziali</button><button type="button" class="tab" data-view="saved">Salvate</button></div><label class="search"><span aria-hidden="true">⌕</span><input id="searchInput" type="search" placeholder="Cerca una notizia..." aria-label="Cerca una notizia"></label></div><div class="filters" id="filters" aria-label="Filtra per categoria"></div><div class="region-select"><label for="regionFilter">Area geografica</label><select id="regionFilter"><option>Tutte le aree</option></select></div></div>
+      <div class="sectiontop"><h2 id="listTitle">Tutte le notizie</h2><small id="listCount"></small></div><div class="storylist" id="storyList"><div class="loading">Caricamento…</div></div>
+    </section>
+    <aside class="detail" id="detail" aria-label="Approfondimento notizia"><div class="detail-empty"><div class="detail-icon">L.</div><h2>Il contesto, quando vuoi.</h2><p>Seleziona una notizia per leggere i fatti chiave, capire perché è rilevante e consultare gli articoli di partenza.</p><div class="divider"></div><p><strong>Trasparenza editoriale</strong><br>Una fonte non equivale a una notizia confermata da più redazioni indipendenti. La scheda indica sempre le fonti effettivamente disponibili.</p></div></aside>
+  </div>
+</main>
+<footer class="bottom"><div class="shell inner"><div><b>Lente. · Il mondo, in breve</b><p>Un lettore personale senza pubblicità. Fonti e date visibili, estratti RSS distinti dalle sintesi automatiche. Preferiti e letture restano sul dispositivo. La selezione automatica può avere lacune.</p></div><button class="how" type="button" id="howBtn">Metodo e stato delle fonti ↗</button></div></footer>
+<dialog class="method-dialog" id="methodDialog" aria-labelledby="methodTitle"><button class="close dialog-close" id="closeMethod" aria-label="Chiudi metodo">×</button><h2 id="methodTitle">Come lavora Lente</h2><div id="methodContent"></div></dialog>
+<script src="app.js" defer></script>
+</body>
+</html>

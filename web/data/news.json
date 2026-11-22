@@ -1,0 +1,1300 @@
+{
+  "schema_version": 2,
+  "version": "0.2",
+  "generated_at": "2026-11-22T12:34:20Z",
+  "last_success_at": "2026-11-22T12:34:20Z",
+  "origin": "rss",
+  "articles": [
+    {
+      "id": "72529461a2c42366816e7587",
+      "title": "Hackerato il database criminale dell'Fbi: Trump: \"Cosa non buona\", ma vede un \"lato positivo\"",
+      "summary": "L'intrusione ha colpito il National Crime Information Center (Ncic). L'Fbi indaga e non commenta. Autori e portata della violazione restano ignoti. È il secondo attacco al Bureau in pochi mesi",
+      "category": "Società",
+      "region": "Non determinata",
+      "published_at": "2026-11-22T12:27:00Z",
+      "mode": "rss",
+      "claims": [],
+      "context": "Il feed non fornisce contesto sufficiente per una ricostruzione: consulta la fonte originale.",
+      "uncertainty": "Una singola fonte non costituisce una verifica indipendente. Il feed può omettere dettagli e aggiornamenti.",
+      "sources": [
+        {
+          "id": "72529461a2c42366816e7587",
+          "url": "https://www.rainews.it/articoli/2026/11/hackerato-il-database-criminale-dellfbi-trump-cosa-non-buona-ma-vede-un-lato-positivo-e54c96f1-4907-4ba1-80cf-b4f2f44494bd.html",
+          "title": "Hackerato il database criminale dell'Fbi: Trump: \"Cosa non buona\", ma vede un \"lato positivo\"",
+          "description": "L'intrusione ha colpito il National Crime Information Center (Ncic). L'Fbi indaga e non commenta. Autori e portata della violazione restano ignoti. È il secondo attacco al Bureau in pochi mesi",
+          "published_at": "2026-11-22T12:27:00Z",
+          "language": "it",
+          "publisher": "Rai News · Esteri",
+          "group": "Rai",
+          "author": "",
+          "source_id": "rai-esteri",
+          "license": "",
+          "terms": "https://www.rainews.it/rss",
+          "ai_allowed": false,
+          "tags": [
+            "Esteri",
+            "attacco hacker",
+            "USA",
+            "Donald Trump",
+            "National Crime Information Center",
+            "CNN",
+            "FBI"
+          ]
+        }
+      ],
+      "related_sources": [],
+      "rank": 1
+    },
+    {
+      "id": "aeb50af4a50ef7ecf0701dcc",
+      "title": "Messico, \"Chapo Isidro\" trasferito su un aereo militare dopo l'arresto",
+      "summary": "Il boss, tra i dieci ricercati dell'Fbi, è stato portato nella capitale con il cugino \"Serafín\" e consegnato alla procura specializzata",
+      "category": "Scienza",
+      "region": "Americhe",
+      "published_at": "2026-11-22T09:11:00Z",
+      "mode": "rss",
+      "claims": [],
+      "context": "Il feed non fornisce contesto sufficiente per una ricostruzione: consulta la fonte originale.",
+      "uncertainty": "Una singola fonte non costituisce una verifica indipendente. Il feed può omettere dettagli e aggiornamenti.",
+      "sources": [
+        {
+          "id": "aeb50af4a50ef7ecf0701dcc",
+          "url": "https://www.rainews.it/video/2026/11/messico-chapo-isidro-trasferito-su-un-aereo-militare-dopo-larresto-628f44b2-2bb2-4389-a1a9-72b5df1a1233.html",
+          "title": "Messico, \"Chapo Isidro\" trasferito su un aereo militare dopo l'arresto",
+          "description": "Il boss, tra i dieci ricercati dell'Fbi, è stato portato nella capitale con il cugino \"Serafín\" e consegnato alla procura specializzata",
+          "published_at": "2026-11-22T09:11:00Z",
+          "language": "it",
+          "publisher": "Rai News · Esteri",
+          "group": "Rai",
+          "author": "",
+          "source_id": "rai-esteri",
+          "license": "",
+          "terms": "https://www.rainews.it/rss",
+          "ai_allowed": false,
+          "tags": [
+            "Esteri",
+            "Narcos",
+            "Messico"
+          ]
+        }
+      ],
+      "related_sources": [],
+      "rank": 2
+    },
+    {
+      "id": "a84c52c7b3c91ca74f64a1cb",
+      "title": "Parigi, cariche e lacrimogeni per sgomberare Place de la Nation a fine corteo",
+      "summary": "Giornata pacifica tra costumi, musica, danze; poi tensione al buio. Decine di migliaia contro rincari, servizi in crisi, stallo politico",
+      "category": "Geopolitica",
+      "region": "Oceania",
+      "published_at": "2026-11-22T07:20:00Z",
+      "mode": "rss",
+      "claims": [],
+      "context": "Il feed non fornisce contesto sufficiente per una ricostruzione: consulta la fonte originale.",
+      "uncertainty": "Una singola fonte non costituisce una verifica indipendente. Il feed può omettere dettagli e aggiornamenti.",
+      "sources": [
+        {
+          "id": "a84c52c7b3c91ca74f64a1cb",
+          "url": "https://www.rainews.it/video/2026/11/parigi-cariche-e-lacrimogeni-per-sgomberare-place-de-la-nation-a-fine-corteo-2502394e-d8a2-41fd-8312-42e5dd733389.html",
+          "title": "Parigi, cariche e lacrimogeni per sgomberare Place de la Nation a fine corteo",
+          "description": "Giornata pacifica tra costumi, musica, danze; poi tensione al buio. Decine di migliaia contro rincari, servizi in crisi, stallo politico",
+          "published_at": "2026-11-22T07:20:00Z",
+          "language": "it",
+          "publisher": "Rai News · Esteri",
+          "group": "Rai",
+          "author": "",
+          "source_id": "rai-esteri",
+          "license": "",
+          "terms": "https://www.rainews.it/rss",
+          "ai_allowed": false,
+          "tags": [
+            "Esteri",
+            "lacrimogeni",
+            "gas",
+            "Polizia",
+            "manifestazione",
+            "Parigi",
+            "rainews"
+          ]
+        }
+      ],
+      "related_sources": [],
+      "rank": 3
+    },
+    {
+      "id": "498ee9d43058ada38132aa77",
+      "title": "Clima, scontro sulle fonti fossili. La COP31 sull'orlo del fallimento",
+      "summary": "Braccio di ferro sull'uscita dai combustibili fossili tra Europa e Paesi petroliferi, lavori in stallo. Oggi nuova assemblea plenaria",
+      "category": "Ambiente",
+      "region": "Globale",
+      "published_at": "2026-11-22T00:18:00Z",
+      "mode": "rss",
+      "claims": [],
+      "context": "Il feed non fornisce contesto sufficiente per una ricostruzione: consulta la fonte originale.",
+      "uncertainty": "Una singola fonte non costituisce una verifica indipendente. Il feed può omettere dettagli e aggiornamenti.",
+      "sources": [
+        {
+          "id": "498ee9d43058ada38132aa77",
+          "url": "https://www.rainews.it/video/2026/11/clima-scontro-sulle-fonti-fossili-la-cop31-su-orlo-del-fallimento-bellomo-grifoni-5a036bed-0dc0-4047-9285-4c19352d4d4e.html",
+          "title": "Clima, scontro sulle fonti fossili. La COP31 sull'orlo del fallimento",
+          "description": "Braccio di ferro sull'uscita dai combustibili fossili tra Europa e Paesi petroliferi, lavori in stallo. Oggi nuova assemblea plenaria",
+          "published_at": "2026-11-22T00:18:00Z",
+          "language": "it",
+          "publisher": "Rai News · Esteri",
+          "group": "Rai",
+          "author": "",
+          "source_id": "rai-esteri",
+          "license": "",
+          "terms": "https://www.rainews.it/rss",
+          "ai_allowed": false,
+          "tags": [
+            "Accordi e politiche ambientali",
+            "Clima",
+            "aiuti",
+            "fonti fossili",
+            "Cop 31",
+            "riscaldamento globale",
+            "Combustibili fossili",
+            "Cop31",
+            "cambiamento climatico",
+            "riscaldamento climatico",
+            "Mondo",
+            "Turchia",
+            "Antalya",
+            "Hoekstra",
+            "Arabia Saudita",
+            "Unione Europea",
+            "Roberto Grifoni",
+            "sabrina bellomo",
+            "onu"
+          ]
+        }
+      ],
+      "related_sources": [],
+      "rank": 4
+    },
+    {
+      "id": "fba440d256d8d9994d66ff62",
+      "title": "Bahrein, edificio in fiamme a Sitra dopo un presunto attacco iraniano",
+      "summary": "Incendio in un impianto industriale in Bahrein in seguito a un presunto attacco iraniano",
+      "category": "Società",
+      "region": "Medio Oriente",
+      "published_at": "2026-11-22T07:14:00Z",
+      "mode": "rss",
+      "claims": [],
+      "context": "Il feed non fornisce contesto sufficiente per una ricostruzione: consulta la fonte originale.",
+      "uncertainty": "Una singola fonte non costituisce una verifica indipendente. Il feed può omettere dettagli e aggiornamenti.",
+      "sources": [
+        {
+          "id": "fba440d256d8d9994d66ff62",
+          "url": "https://www.rainews.it/video/2026/11/bahrein-edificio-in-fiamme-a-sitra-dopo-un-presunto-attacco-iraniano-2c754446-c990-430d-a2f4-8376027c1c03.html",
+          "title": "Bahrein, edificio in fiamme a Sitra dopo un presunto attacco iraniano",
+          "description": "Incendio in un impianto industriale in Bahrein in seguito a un presunto attacco iraniano",
+          "published_at": "2026-11-22T07:14:00Z",
+          "language": "it",
+          "publisher": "Rai News · Esteri",
+          "group": "Rai",
+          "author": "",
+          "source_id": "rai-esteri",
+          "license": "",
+          "terms": "https://www.rainews.it/rss",
+          "ai_allowed": false,
+          "tags": [
+            "Guerre e conflitti",
+            "Incendio",
+            "Bahrein"
+          ]
+        }
+      ],
+      "related_sources": [],
+      "rank": 5
+    },
+    {
+      "id": "839e889ee6a982d50c4e47c3",
+      "title": "In piazza contro il carovita e la nuova legge sulla polizia: è il sesto sabato di protesta",
+      "summary": "Sindacati, studenti e Gilet Gialli manifestano in tutto il Paese per chiedere salari più alti e la difesa dei servizi pubblici. Guerra di cifre tra gli organizzatori (150mila) e il ministero dell'Interno (82mila)",
+      "category": "Geopolitica",
+      "region": "Europa",
+      "published_at": "2026-11-21T18:19:00Z",
+      "mode": "rss",
+      "claims": [],
+      "context": "Il feed non fornisce contesto sufficiente per una ricostruzione: consulta la fonte originale.",
+      "uncertainty": "Una singola fonte non costituisce una verifica indipendente. Il feed può omettere dettagli e aggiornamenti.",
+      "sources": [
+        {
+          "id": "839e889ee6a982d50c4e47c3",
+          "url": "https://www.rainews.it/articoli/2026/11/in-piazza-contro-il-carovita-e-la-nuova-legge-sulla-polizia-e-il-sesto-sabato-di-protesta-b13e0bca-3dc7-4132-bcf6-7ba314197f7c.html",
+          "title": "In piazza contro il carovita e la nuova legge sulla polizia: è il sesto sabato di protesta",
+          "description": "Sindacati, studenti e Gilet Gialli manifestano in tutto il Paese per chiedere salari più alti e la difesa dei servizi pubblici. Guerra di cifre tra gli organizzatori (150mila) e il ministero dell'Interno (82mila)",
+          "published_at": "2026-11-21T18:19:00Z",
+          "language": "it",
+          "publisher": "Rai News · Esteri",
+          "group": "Rai",
+          "author": "",
+          "source_id": "rai-esteri",
+          "license": "",
+          "terms": "https://www.rainews.it/rss",
+          "ai_allowed": false,
+          "tags": [
+            "Esteri",
+            "proteste",
+            "Gilet Gialli",
+            "Francia",
+            "Parigi",
+            "Ministero dell'Interno",
+            "Emmanuel Macron",
+            "Union étudiante",
+            "Gilet Gialli"
+          ]
+        }
+      ],
+      "related_sources": [],
+      "rank": 6
+    },
+    {
+      "id": "51515ec22c92381f022ad46f",
+      "title": "Hackerato l'archivio FBI, Trump: \"Non mi piace, ma forse scopriremo delle cose\"",
+      "summary": "Il presidente americano alla Fox parla di Iran e Ucraina, poi si lascia andare sull'attacco alla banca dati dell'FBI: \"Non è cosa buona ma forse scopriremo cose che altrimenti non avremmo mai scoperto”",
+      "category": "Economia",
+      "region": "Americhe",
+      "published_at": "2026-11-22T00:19:00Z",
+      "mode": "rss",
+      "claims": [],
+      "context": "Il feed non fornisce contesto sufficiente per una ricostruzione: consulta la fonte originale.",
+      "uncertainty": "Una singola fonte non costituisce una verifica indipendente. Il feed può omettere dettagli e aggiornamenti.",
+      "sources": [
+        {
+          "id": "51515ec22c92381f022ad46f",
+          "url": "https://www.rainews.it/video/2026/11/hackerato-archivio-fbi-trump-non-mi-piace-ma-forse-scopriremo-delle-cose-lo-savio-ny-a8c54ef8-3621-48be-8b71-4b1194017652.html",
+          "title": "Hackerato l'archivio FBI, Trump: \"Non mi piace, ma forse scopriremo delle cose\"",
+          "description": "Il presidente americano alla Fox parla di Iran e Ucraina, poi si lascia andare sull'attacco alla banca dati dell'FBI: \"Non è cosa buona ma forse scopriremo cose che altrimenti non avremmo mai scoperto”",
+          "published_at": "2026-11-22T00:19:00Z",
+          "language": "it",
+          "publisher": "Rai News · Esteri",
+          "group": "Rai",
+          "author": "",
+          "source_id": "rai-esteri",
+          "license": "",
+          "terms": "https://www.rainews.it/rss",
+          "ai_allowed": false,
+          "tags": [
+            "Guerre",
+            "database",
+            "attacco hacker",
+            "FBI",
+            "Guerra Iran-Usa",
+            "Iran",
+            "Stati Uniti",
+            "Casa Bianca",
+            "Carlo Maria Lo Savio",
+            "Donald Trump",
+            "Stati Uniti",
+            "Fox News",
+            "National Crime Information Center",
+            "FBI"
+          ]
+        }
+      ],
+      "related_sources": [],
+      "rank": 7
+    },
+    {
+      "id": "1ef27a83824517999a0e328a",
+      "title": "Blitz dell'Ice all'aeroporto di Seattle. La compagnia aerea: \"Angosciante\"",
+      "summary": "Due persone fermate da agenti in borghese sul pontile d'imbarco",
+      "category": "Società",
+      "region": "Non determinata",
+      "published_at": "2026-11-22T07:04:00Z",
+      "mode": "rss",
+      "claims": [],
+      "context": "Il feed non fornisce contesto sufficiente per una ricostruzione: consulta la fonte originale.",
+      "uncertainty": "Una singola fonte non costituisce una verifica indipendente. Il feed può omettere dettagli e aggiornamenti.",
+      "sources": [
+        {
+          "id": "1ef27a83824517999a0e328a",
+          "url": "https://www.rainews.it/articoli/2026/11/blitz-dellice-allaeroporto-di-seattle-la-compagnia-aerea-angosciante-728f6a56-ede4-4e53-a59d-14787106b074.html",
+          "title": "Blitz dell'Ice all'aeroporto di Seattle. La compagnia aerea: \"Angosciante\"",
+          "description": "Due persone fermate da agenti in borghese sul pontile d'imbarco",
+          "published_at": "2026-11-22T07:04:00Z",
+          "language": "it",
+          "publisher": "Rai News · Esteri",
+          "group": "Rai",
+          "author": "",
+          "source_id": "rai-esteri",
+          "license": "",
+          "terms": "https://www.rainews.it/rss",
+          "ai_allowed": false,
+          "tags": [
+            "Esteri",
+            "Blitz",
+            "Aeroporto",
+            "seattle"
+          ]
+        }
+      ],
+      "related_sources": [],
+      "rank": 8
+    },
+    {
+      "id": "881deb6426c87857dcb1c1df",
+      "title": "Sinaloa, veicoli carbonizzati e cisterne in fiamme dopo l'arresto del \"Chapo Isidro\"",
+      "summary": "Filmati di testimoni mostrano le strade dopo l'operazione contro il boss tra i dieci ricercati dell'Fbi; scontri e blocchi stradali nello Stato",
+      "category": "Scienza",
+      "region": "Americhe",
+      "published_at": "2026-11-22T08:07:00Z",
+      "mode": "rss",
+      "claims": [],
+      "context": "Il feed non fornisce contesto sufficiente per una ricostruzione: consulta la fonte originale.",
+      "uncertainty": "Una singola fonte non costituisce una verifica indipendente. Il feed può omettere dettagli e aggiornamenti.",
+      "sources": [
+        {
+          "id": "881deb6426c87857dcb1c1df",
+          "url": "https://www.rainews.it/video/2026/11/sinaloa-veicoli-carbonizzati-e-cisterne-in-fiamme-dopo-larresto-del-chapo-isidro-6ce76b67-35de-4f07-ad41-cce505d2b6a7.html",
+          "title": "Sinaloa, veicoli carbonizzati e cisterne in fiamme dopo l'arresto del \"Chapo Isidro\"",
+          "description": "Filmati di testimoni mostrano le strade dopo l'operazione contro il boss tra i dieci ricercati dell'Fbi; scontri e blocchi stradali nello Stato",
+          "published_at": "2026-11-22T08:07:00Z",
+          "language": "it",
+          "publisher": "Rai News · Esteri",
+          "group": "Rai",
+          "author": "",
+          "source_id": "rai-esteri",
+          "license": "",
+          "terms": "https://www.rainews.it/rss",
+          "ai_allowed": false,
+          "tags": [
+            "Esteri",
+            "Arresto",
+            "Messico"
+          ]
+        }
+      ],
+      "related_sources": [],
+      "rank": 9
+    },
+    {
+      "id": "2f9d7131f75f45b1d9c2ee56",
+      "title": "Agenti Ice incappucciati fermano due persone. L'urlo di una madre: \"State portando via mia figlia\"",
+      "summary": "Operazione a volto coperto su pontile d'imbarco di un volo diretto a Los Angeles: le urla disperate di una madre riprese dai presenti. Il governatore dello Stato di Washington: \"Intervento orribile e antiamericano\"",
+      "category": "Società",
+      "region": "Non determinata",
+      "published_at": "2026-11-22T06:47:00Z",
+      "mode": "rss",
+      "claims": [],
+      "context": "Il feed non fornisce contesto sufficiente per una ricostruzione: consulta la fonte originale.",
+      "uncertainty": "Una singola fonte non costituisce una verifica indipendente. Il feed può omettere dettagli e aggiornamenti.",
+      "sources": [
+        {
+          "id": "2f9d7131f75f45b1d9c2ee56",
+          "url": "https://www.rainews.it/video/2026/11/agenti-ice-incappucciati-fermano-due-persone-lurlo-di-una-madre-state-portando-via-mia-figlia-6f296cae-4b37-494e-a1d5-d9054776e6f6.html",
+          "title": "Agenti Ice incappucciati fermano due persone. L'urlo di una madre: \"State portando via mia figlia\"",
+          "description": "Operazione a volto coperto su pontile d'imbarco di un volo diretto a Los Angeles: le urla disperate di una madre riprese dai presenti. Il governatore dello Stato di Washington: \"Intervento orribile e antiamericano\"",
+          "published_at": "2026-11-22T06:47:00Z",
+          "language": "it",
+          "publisher": "Rai News · Esteri",
+          "group": "Rai",
+          "author": "",
+          "source_id": "rai-esteri",
+          "license": "",
+          "terms": "https://www.rainews.it/rss",
+          "ai_allowed": false,
+          "tags": [
+            "Esteri",
+            "Agenti ICE",
+            "USA",
+            "seattle",
+            "rainews"
+          ]
+        }
+      ],
+      "related_sources": [],
+      "rank": 10
+    },
+    {
+      "id": "6d1580c2a79b8b5de552e6d5",
+      "title": "Kate si racconta: \"Il cancro cambia il corpo ma smuove qualcosa di profondo\"",
+      "summary": "La principessa ripercorre con la propria voce la malattia, la chemioterapia e il ritorno alla vita dopo la remissione, mentre scala le tre vette più alte del Regno Unito insieme ad altri pazienti guariti",
+      "category": "Società",
+      "region": "Europa",
+      "published_at": "2026-11-21T19:47:00Z",
+      "mode": "rss",
+      "claims": [],
+      "context": "Il feed non fornisce contesto sufficiente per una ricostruzione: consulta la fonte originale.",
+      "uncertainty": "Una singola fonte non costituisce una verifica indipendente. Il feed può omettere dettagli e aggiornamenti.",
+      "sources": [
+        {
+          "id": "6d1580c2a79b8b5de552e6d5",
+          "url": "https://www.rainews.it/video/2026/11/kate-si-racconta-il-cancro-cambia-il-corpo-ma-smuove-qualcosa-di-profondo-ab76061e-95b7-4c4d-b767-22db726dd338.html",
+          "title": "Kate si racconta: \"Il cancro cambia il corpo ma smuove qualcosa di profondo\"",
+          "description": "La principessa ripercorre con la propria voce la malattia, la chemioterapia e il ritorno alla vita dopo la remissione, mentre scala le tre vette più alte del Regno Unito insieme ad altri pazienti guariti",
+          "published_at": "2026-11-21T19:47:00Z",
+          "language": "it",
+          "publisher": "Rai News · Esteri",
+          "group": "Rai",
+          "author": "",
+          "source_id": "rai-esteri",
+          "license": "",
+          "terms": "https://www.rainews.it/rss",
+          "ai_allowed": false,
+          "tags": [
+            "Esteri",
+            "documentario",
+            "cancro",
+            "Regno Unito",
+            "Kate Middelton"
+          ]
+        }
+      ],
+      "related_sources": [],
+      "rank": 11
+    },
+    {
+      "id": "b206f0b17a6871f90725f8a7",
+      "title": "Scene di guerriglia in Messico, preso il superboss dei narcos Meza-Flores El Chapo Isidro",
+      "summary": "Era nella black list Fbi. Violenze durante la sua cattura",
+      "category": "Società",
+      "region": "Americhe",
+      "published_at": "2026-11-22T09:13:00Z",
+      "mode": "rss",
+      "claims": [],
+      "context": "Il feed non fornisce contesto sufficiente per una ricostruzione: consulta la fonte originale.",
+      "uncertainty": "Una singola fonte non costituisce una verifica indipendente. Il feed può omettere dettagli e aggiornamenti.",
+      "sources": [
+        {
+          "id": "b206f0b17a6871f90725f8a7",
+          "url": "https://www.rainews.it/articoli/2026/11/scene-di-guerriglia-in-messico-preso-il-superboss-dei-narcos-meza-flores-el-chapo-isidro-582fcf28-c781-4653-a761-df54b1964c9e.html",
+          "title": "Scene di guerriglia in Messico, preso il superboss dei narcos Meza-Flores El Chapo Isidro",
+          "description": "Era nella black list Fbi. Violenze durante la sua cattura",
+          "published_at": "2026-11-22T09:13:00Z",
+          "language": "it",
+          "publisher": "Rai News · Esteri",
+          "group": "Rai",
+          "author": "",
+          "source_id": "rai-esteri",
+          "license": "",
+          "terms": "https://www.rainews.it/rss",
+          "ai_allowed": false,
+          "tags": [
+            "Esteri",
+            "cattura",
+            "Città delMessico"
+          ]
+        }
+      ],
+      "related_sources": [],
+      "rank": 12
+    },
+    {
+      "id": "a6a592475708ea8dcc072678",
+      "title": "La regista iraniana Eshaghian: \"Con An eye for an eye racconto l'Iran dei volontari ombra\"",
+      "summary": "Proiettato in anteprima nel Regno Unito, il documentario segue la storia di Tahereh, che a Teheran ha ucciso il marito violento e lo ha sepolto in salotto. Dopo aver scontato 14 anni di carcere, deve salvarsi dall'impiccagione prevista dall",
+      "category": "Società",
+      "region": "Medio Oriente",
+      "published_at": "2026-11-21T15:05:00Z",
+      "mode": "rss",
+      "claims": [],
+      "context": "Il feed non fornisce contesto sufficiente per una ricostruzione: consulta la fonte originale.",
+      "uncertainty": "Una singola fonte non costituisce una verifica indipendente. Il feed può omettere dettagli e aggiornamenti.",
+      "sources": [
+        {
+          "id": "a6a592475708ea8dcc072678",
+          "url": "https://www.rainews.it/video/2026/11/an-eye-for-an-eye-documentario-la-regista-tanaz-eshaghian-racconto-liran-dei-volontari-ombra-che-salvano-la-gente-dalla-pena-di-morte-diya-il-prezzo-del-sangue-repubblica-islamica-7fefb07f-a1ab-46d0-96f8-781207842cea.html",
+          "title": "La regista iraniana Eshaghian: \"Con An eye for an eye racconto l'Iran dei volontari ombra\"",
+          "description": "Proiettato in anteprima nel Regno Unito, il documentario segue la storia di Tahereh, che a Teheran ha ucciso il marito violento e lo ha sepolto in salotto. Dopo aver scontato 14 anni di carcere, deve salvarsi dall'impiccagione prevista dalla sharia",
+          "published_at": "2026-11-21T15:05:00Z",
+          "language": "it",
+          "publisher": "Rai News · Esteri",
+          "group": "Rai",
+          "author": "",
+          "source_id": "rai-esteri",
+          "license": "",
+          "terms": "https://www.rainews.it/rss",
+          "ai_allowed": false,
+          "tags": [
+            "Esteri",
+            "blood money",
+            "documentario",
+            "Regno Unito",
+            "Iran",
+            "Teheran",
+            "Repubblica islamica dell'Iran",
+            "cambridge",
+            "King's College",
+            "Tahereh",
+            "Gillian Tett",
+            "Tanaz Eshaghian"
+          ]
+        }
+      ],
+      "related_sources": [],
+      "rank": 13
+    },
+    {
+      "id": "8c3f4c79661ec66785aa87a7",
+      "title": "Parigi, manifestanti in Place de la République contro il caro vita: alcuni salgono sulla statua",
+      "summary": "Centinaia di persone in Place de la République per denunciare il costo della vita, la crisi degli alloggi e i problemi delle scuole. Un manifestante: \"Siamo meno numerosi, ma la rabbia è ancora viva\"",
+      "category": "Geopolitica",
+      "region": "Europa",
+      "published_at": "2026-11-21T15:54:00Z",
+      "mode": "rss",
+      "claims": [],
+      "context": "Il feed non fornisce contesto sufficiente per una ricostruzione: consulta la fonte originale.",
+      "uncertainty": "Una singola fonte non costituisce una verifica indipendente. Il feed può omettere dettagli e aggiornamenti.",
+      "sources": [
+        {
+          "id": "8c3f4c79661ec66785aa87a7",
+          "url": "https://www.rainews.it/video/2026/11/parigi-manifestanti-in-place-de-la-republique-contro-il-caro-vita-alcuni-salgono-sulla-statua-72a41488-3715-44bb-a351-e453ec667502.html",
+          "title": "Parigi, manifestanti in Place de la République contro il caro vita: alcuni salgono sulla statua",
+          "description": "Centinaia di persone in Place de la République per denunciare il costo della vita, la crisi degli alloggi e i problemi delle scuole. Un manifestante: \"Siamo meno numerosi, ma la rabbia è ancora viva\"",
+          "published_at": "2026-11-21T15:54:00Z",
+          "language": "it",
+          "publisher": "Rai News · Esteri",
+          "group": "Rai",
+          "author": "",
+          "source_id": "rai-esteri",
+          "license": "",
+          "terms": "https://www.rainews.it/rss",
+          "ai_allowed": false,
+          "tags": [
+            "Esteri",
+            "cronaca",
+            "protesta",
+            "caro vita",
+            "Francia"
+          ]
+        }
+      ],
+      "related_sources": [],
+      "rank": 14
+    },
+    {
+      "id": "738783084dc6fe4bced09ff3",
+      "title": "Dominique de Villepin scende in campo per l'Eliseo: \"Salviamo una democrazia bloccata\"",
+      "summary": "A 73 anni l'ex premier neogollista annuncia la candidatura contro la polarizzazione tra Jean-Luc Mélenchon e Marine Le Pen. Intanto perquisita la sede del Rassemblement National per il sospetto di una \"gola profonda\" al ministero dell'Inter",
+      "category": "Geopolitica",
+      "region": "Non determinata",
+      "published_at": "2026-11-21T18:25:00Z",
+      "mode": "rss",
+      "claims": [],
+      "context": "Il feed non fornisce contesto sufficiente per una ricostruzione: consulta la fonte originale.",
+      "uncertainty": "Una singola fonte non costituisce una verifica indipendente. Il feed può omettere dettagli e aggiornamenti.",
+      "sources": [
+        {
+          "id": "738783084dc6fe4bced09ff3",
+          "url": "https://www.rainews.it/articoli/2026/11/dominique-de-villepin-scende-in-campo-per-leliseo-salviamo-una-democrazia-bloccata-70600fc5-2ec3-49bc-b260-3cd6500c62ff.html",
+          "title": "Dominique de Villepin scende in campo per l'Eliseo: \"Salviamo una democrazia bloccata\"",
+          "description": "A 73 anni l'ex premier neogollista annuncia la candidatura contro la polarizzazione tra Jean-Luc Mélenchon e Marine Le Pen. Intanto perquisita la sede del Rassemblement National per il sospetto di una \"gola profonda\" al ministero dell'Interno",
+          "published_at": "2026-11-21T18:25:00Z",
+          "language": "it",
+          "publisher": "Rai News · Esteri",
+          "group": "Rai",
+          "author": "",
+          "source_id": "rai-esteri",
+          "license": "",
+          "terms": "https://www.rainews.it/rss",
+          "ai_allowed": false,
+          "tags": [
+            "Esteri",
+            "Elezioni presidenziali",
+            "Parigi",
+            "Hugues Moutouh",
+            "Rassemblement National",
+            "Marine Le Pen",
+            "Laurent Nuñez",
+            "Dominique de Villepin"
+          ]
+        }
+      ],
+      "related_sources": [],
+      "rank": 15
+    },
+    {
+      "id": "dd45fec78445b27908c5014e",
+      "title": "Clima, stallo alla COP31. Nella bozza scompare il taglio ai combustibili fossili",
+      "summary": "Slitta la chiusura della conferenza ONU sul clima, proteste e veti per la marcia indietro sulle fonti fossili e i fondi ai Paesi vulnerabili",
+      "category": "Ambiente",
+      "region": "Globale",
+      "published_at": "2026-11-20T18:42:00Z",
+      "mode": "rss",
+      "claims": [],
+      "context": "Il feed non fornisce contesto sufficiente per una ricostruzione: consulta la fonte originale.",
+      "uncertainty": "Una singola fonte non costituisce una verifica indipendente. Il feed può omettere dettagli e aggiornamenti.",
+      "sources": [
+        {
+          "id": "dd45fec78445b27908c5014e",
+          "url": "https://www.rainews.it/video/2026/11/clima-stallo-cop31-nella-bozza-scompare-taglio-combustibili-fossili-tg3-romana-fabrizi-inviata-ad-antalya-0ea32ca3-4e8c-4d12-b68b-293b1ac75e7c.html",
+          "title": "Clima, stallo alla COP31. Nella bozza scompare il taglio ai combustibili fossili",
+          "description": "Slitta la chiusura della conferenza ONU sul clima, proteste e veti per la marcia indietro sulle fonti fossili e i fondi ai Paesi vulnerabili",
+          "published_at": "2026-11-20T18:42:00Z",
+          "language": "it",
+          "publisher": "Rai News · Esteri",
+          "group": "Rai",
+          "author": "",
+          "source_id": "rai-esteri",
+          "license": "",
+          "terms": "https://www.rainews.it/rss",
+          "ai_allowed": false,
+          "tags": [
+            "Accordi e politiche ambientali",
+            "Clima",
+            "fonti fossili",
+            "Combustibili fossili",
+            "Cop31",
+            "riscaldamento climatico",
+            "Cina",
+            "Mondo",
+            "Turchia",
+            "Antalya",
+            "India",
+            "Panama",
+            "Juan Carlos Navarro",
+            "Unione Europea",
+            "Romana Fabrizi",
+            "Gilberto Pichetto Fratin",
+            "Angelo Bonelli",
+            "Gruppo Arabo",
+            "onu"
+          ]
+        }
+      ],
+      "related_sources": [],
+      "rank": 16
+    },
+    {
+      "id": "2ddcc100183434ba6833bdd0",
+      "title": "Kate Middleton si racconta in Heal: “Il cancro ti cambia anche dentro\"",
+      "summary": "Nel documentario \"Heal\", in onda sulla BBC il 29 novembre, la principessa del Galles racconta la malattia e la rinascita. Le immagini della sfida sulle tre vette più alte di Scozia, Inghilterra e Galles e l'abbraccio con William e i figli",
+      "category": "Società",
+      "region": "Europa",
+      "published_at": "2026-11-21T17:35:00Z",
+      "mode": "rss",
+      "claims": [],
+      "context": "Il feed non fornisce contesto sufficiente per una ricostruzione: consulta la fonte originale.",
+      "uncertainty": "Una singola fonte non costituisce una verifica indipendente. Il feed può omettere dettagli e aggiornamenti.",
+      "sources": [
+        {
+          "id": "2ddcc100183434ba6833bdd0",
+          "url": "https://www.rainews.it/video/2026/11/kate-middleton-le-lacrime-e-limpresa-dopo-il-cancro-tre-montagne-in-meno-di-24-ore-cc8fb727-ba24-4621-8327-5d3c204489e8.html",
+          "title": "Kate Middleton si racconta in Heal: “Il cancro ti cambia anche dentro\"",
+          "description": "Nel documentario \"Heal\", in onda sulla BBC il 29 novembre, la principessa del Galles racconta la malattia e la rinascita. Le immagini della sfida sulle tre vette più alte di Scozia, Inghilterra e Galles e l'abbraccio con William e i figli",
+          "published_at": "2026-11-21T17:35:00Z",
+          "language": "it",
+          "publisher": "Rai News · Esteri",
+          "group": "Rai",
+          "author": "",
+          "source_id": "rai-esteri",
+          "license": "",
+          "terms": "https://www.rainews.it/rss",
+          "ai_allowed": false,
+          "tags": [
+            "Esteri",
+            "malattia",
+            "Spettacolo",
+            "Regno Unito",
+            "Kate Middleton"
+          ]
+        }
+      ],
+      "related_sources": [],
+      "rank": 17
+    },
+    {
+      "id": "65a4f766c915f93927b7ee25",
+      "title": "Jair Bolsonaro ricoverato in terapia intensiva per un'occlusione intestinale",
+      "summary": "L'ex presidente, 71 anni, è stato trasferito all'ospedale DF Star di Brasilia dopo aver accusato forti dolori addominali. Secondo il bollettino medico è stabile e cosciente, mentre il figlio Carlos attacca la magistratura denunciando il peg",
+      "category": "Società",
+      "region": "Americhe",
+      "published_at": "2026-11-21T19:07:00Z",
+      "mode": "rss",
+      "claims": [],
+      "context": "Il feed non fornisce contesto sufficiente per una ricostruzione: consulta la fonte originale.",
+      "uncertainty": "Una singola fonte non costituisce una verifica indipendente. Il feed può omettere dettagli e aggiornamenti.",
+      "sources": [
+        {
+          "id": "65a4f766c915f93927b7ee25",
+          "url": "https://www.rainews.it/articoli/2026/11/jair-bolsonaro-ricoverato-in-terapia-intensiva-per-unocclusione-intestinale-07510d52-8117-4c57-b2ac-9a4331fa9ae3.html",
+          "title": "Jair Bolsonaro ricoverato in terapia intensiva per un'occlusione intestinale",
+          "description": "L'ex presidente, 71 anni, è stato trasferito all'ospedale DF Star di Brasilia dopo aver accusato forti dolori addominali. Secondo il bollettino medico è stabile e cosciente, mentre il figlio Carlos attacca la magistratura denunciando il peggioramento",
+          "published_at": "2026-11-21T19:07:00Z",
+          "language": "it",
+          "publisher": "Rai News · Esteri",
+          "group": "Rai",
+          "author": "",
+          "source_id": "rai-esteri",
+          "license": "",
+          "terms": "https://www.rainews.it/rss",
+          "ai_allowed": false,
+          "tags": [
+            "Esteri",
+            "occlusione intestinale",
+            "Brasile",
+            "Brasilia",
+            "Carlos",
+            "Jair Bolsonaro"
+          ]
+        }
+      ],
+      "related_sources": [],
+      "rank": 18
+    },
+    {
+      "id": "3eb8d658857aa07560cdcda3",
+      "title": "Piccolo villaggio inglese vota l'indipendenza per protesta contro i migranti",
+      "summary": "'Referendum simbolico' a Barnham contro i piani del governo per il trasferimento di richiedenti asilo in una ex base militare. Ai residenti è stato chiesto se favorevoli a richiedere uno \"status di dipendenza della Corona\". Precedente a Pid",
+      "category": "Geopolitica",
+      "region": "Non determinata",
+      "published_at": "2026-11-21T16:19:00Z",
+      "mode": "rss",
+      "claims": [],
+      "context": "Il feed non fornisce contesto sufficiente per una ricostruzione: consulta la fonte originale.",
+      "uncertainty": "Una singola fonte non costituisce una verifica indipendente. Il feed può omettere dettagli e aggiornamenti.",
+      "sources": [
+        {
+          "id": "3eb8d658857aa07560cdcda3",
+          "url": "https://www.rainews.it/articoli/2026/11/piccolo-villaggio-inglese-vota-indipendenza-per-protesta-contro-migranti-5305a9de-446a-4d47-aa16-8376eabeec31.html",
+          "title": "Piccolo villaggio inglese vota l'indipendenza per protesta contro i migranti",
+          "description": "'Referendum simbolico' a Barnham contro i piani del governo per il trasferimento di richiedenti asilo in una ex base militare. Ai residenti è stato chiesto se favorevoli a richiedere uno \"status di dipendenza della Corona\". Precedente a Piddington",
+          "published_at": "2026-11-21T16:19:00Z",
+          "language": "it",
+          "publisher": "Rai News · Esteri",
+          "group": "Rai",
+          "author": "",
+          "source_id": "rai-esteri",
+          "license": "",
+          "terms": "https://www.rainews.it/rss",
+          "ai_allowed": false,
+          "tags": [
+            "Esteri",
+            "migranti",
+            "referendum",
+            "Piddington",
+            "Barnham",
+            "John Bauer",
+            "Helen Beck"
+          ]
+        }
+      ],
+      "related_sources": [],
+      "rank": 19
+    },
+    {
+      "id": "c6f8e89685d0426de740ec1b",
+      "title": "Papa Leone ai giovani: \"Difficile vivere la fede, ma non come un problema di matematica\"",
+      "summary": "Incontrando 6mila giovani del Lazio nell'Aula Paolo VI in vista della GMG di Seoul, Papa Leone XIV ha spiegato il vero significato del motto \"Coraggio, io ho vinto il mondo!\"",
+      "category": "Società",
+      "region": "Non determinata",
+      "published_at": "2026-11-21T13:03:00Z",
+      "mode": "rss",
+      "claims": [],
+      "context": "Il feed non fornisce contesto sufficiente per una ricostruzione: consulta la fonte originale.",
+      "uncertainty": "Una singola fonte non costituisce una verifica indipendente. Il feed può omettere dettagli e aggiornamenti.",
+      "sources": [
+        {
+          "id": "c6f8e89685d0426de740ec1b",
+          "url": "https://www.rainews.it/video/2026/11/papa-leone-difficile-vivere-la-fede-ma-non-come-un-problema-di-matematica-1f2a9e85-41f6-4197-b281-de2e423b879c.html",
+          "title": "Papa Leone ai giovani: \"Difficile vivere la fede, ma non come un problema di matematica\"",
+          "description": "Incontrando 6mila giovani del Lazio nell'Aula Paolo VI in vista della GMG di Seoul, Papa Leone XIV ha spiegato il vero significato del motto \"Coraggio, io ho vinto il mondo!\"",
+          "published_at": "2026-11-21T13:03:00Z",
+          "language": "it",
+          "publisher": "Rai News · Esteri",
+          "group": "Rai",
+          "author": "",
+          "source_id": "rai-esteri",
+          "license": "",
+          "terms": "https://www.rainews.it/rss",
+          "ai_allowed": false,
+          "tags": [
+            "Esteri",
+            "GMG",
+            "Pastorale",
+            "giovani",
+            "Citta del Vaticano",
+            "Papa Leone XIV"
+          ]
+        }
+      ],
+      "related_sources": [],
+      "rank": 20
+    },
+    {
+      "id": "a594af5dfa5a405b21fed5fb",
+      "title": "007 Usa hanno allertato le compagnie aeree, \"Al Qaeda pronta a compiere attacchi\"",
+      "summary": "Per i servizi di Intelligence, affiliati e sostenitori del gruppo terroristico hanno diffusi messaggi \"in cui lodano il tentato dirottamento e incoraggiano azioni simili contro obiettivi d'interesse americano, israeliano o ebraico\"",
+      "category": "Società",
+      "region": "Medio Oriente",
+      "published_at": "2026-11-21T02:32:00Z",
+      "mode": "rss",
+      "claims": [],
+      "context": "Il feed non fornisce contesto sufficiente per una ricostruzione: consulta la fonte originale.",
+      "uncertainty": "Una singola fonte non costituisce una verifica indipendente. Il feed può omettere dettagli e aggiornamenti.",
+      "sources": [
+        {
+          "id": "a594af5dfa5a405b21fed5fb",
+          "url": "https://www.rainews.it/articoli/2026/11/007-usa-hanno-allertato-le-compagnie-aeree-al-qaeda-pronta-a-compiere-attacchi-4b8ab7cb-b689-4486-a71d-d41e7741338c.html",
+          "title": "007 Usa hanno allertato le compagnie aeree, \"Al Qaeda pronta a compiere attacchi\"",
+          "description": "Per i servizi di Intelligence, affiliati e sostenitori del gruppo terroristico hanno diffusi messaggi \"in cui lodano il tentato dirottamento e incoraggiano azioni simili contro obiettivi d'interesse americano, israeliano o ebraico\"",
+          "published_at": "2026-11-21T02:32:00Z",
+          "language": "it",
+          "publisher": "Rai News · Esteri",
+          "group": "Rai",
+          "author": "",
+          "source_id": "rai-esteri",
+          "license": "",
+          "terms": "https://www.rainews.it/rss",
+          "ai_allowed": false,
+          "tags": [
+            "Esteri",
+            "007",
+            "Al Qaeda",
+            "USA"
+          ]
+        }
+      ],
+      "related_sources": [],
+      "rank": 21
+    },
+    {
+      "id": "e0b64fa9c7f84331e96d381d",
+      "title": "Trump nomina amici e nemici, elogio di Putin e attacco alla giustizia internazionale",
+      "summary": "Il presidente USA a tutto campo: la guerra in Ucraina non finisce per l'odio tra Putin e Zelensky, Huang dovrebbe tornare alla guida di Nvidia, Stephen Miller è \"l'uomo più potente del mondo\"",
+      "category": "Geopolitica",
+      "region": "Europa",
+      "published_at": "2026-11-21T03:01:00Z",
+      "mode": "rss",
+      "claims": [],
+      "context": "Il feed non fornisce contesto sufficiente per una ricostruzione: consulta la fonte originale.",
+      "uncertainty": "Una singola fonte non costituisce una verifica indipendente. Il feed può omettere dettagli e aggiornamenti.",
+      "sources": [
+        {
+          "id": "e0b64fa9c7f84331e96d381d",
+          "url": "https://www.rainews.it/articoli/2026/11/trump-nomina-amici-e-nemici-conferenza-stampa-elogio-di-putin-e-attacco-alla-giustizia-internazionale-09acf3ad-f4d5-4e0b-929d-c5e87cf8edbe.html",
+          "title": "Trump nomina amici e nemici, elogio di Putin e attacco alla giustizia internazionale",
+          "description": "Il presidente USA a tutto campo: la guerra in Ucraina non finisce per l'odio tra Putin e Zelensky, Huang dovrebbe tornare alla guida di Nvidia, Stephen Miller è \"l'uomo più potente del mondo\"",
+          "published_at": "2026-11-21T03:01:00Z",
+          "language": "it",
+          "publisher": "Rai News · Esteri",
+          "group": "Rai",
+          "author": "",
+          "source_id": "rai-esteri",
+          "license": "",
+          "terms": "https://www.rainews.it/rss",
+          "ai_allowed": false,
+          "tags": [
+            "Esteri",
+            "missione a Shenzhen",
+            "Guerra Russia-Ucraina",
+            "conferenza stampa",
+            "Guerra in Ucraina",
+            "incontro",
+            "Data Center",
+            "Vertice",
+            "Cina",
+            "Stati Uniti",
+            "america",
+            "Casa Bianca",
+            "Stretto di Hormuz",
+            "Federal Reserve",
+            "Donald Trump",
+            "Pete Hegseth",
+            "Corte penale internazionale",
+            "Stephen Miller",
+            "Xi Jinping",
+            "Vladimir Putin",
+            "JD Vance"
+          ]
+        }
+      ],
+      "related_sources": [],
+      "rank": 22
+    },
+    {
+      "id": "a07a37da6489725ae346e003",
+      "title": "Gli Usa declassificano tre video di Ufo ripresi in Medio Oriente",
+      "summary": "Le immagini sgranate, girate tra il 2020 e il 2026, arrivano dal Pentagono con un avvertimento: nessuna conclusione sulla loro natura",
+      "category": "Società",
+      "region": "Non determinata",
+      "published_at": "2026-11-21T05:46:00Z",
+      "mode": "rss",
+      "claims": [],
+      "context": "Il feed non fornisce contesto sufficiente per una ricostruzione: consulta la fonte originale.",
+      "uncertainty": "Una singola fonte non costituisce una verifica indipendente. Il feed può omettere dettagli e aggiornamenti.",
+      "sources": [
+        {
+          "id": "a07a37da6489725ae346e003",
+          "url": "https://www.rainews.it/video/2026/11/gli-usa-declassificano-tre-video-di-ufo-ripresi-in-medio-oriente-a9c7ecc5-8106-49ad-bb15-0a33e6d89a16.html",
+          "title": "Gli Usa declassificano tre video di Ufo ripresi in Medio Oriente",
+          "description": "Le immagini sgranate, girate tra il 2020 e il 2026, arrivano dal Pentagono con un avvertimento: nessuna conclusione sulla loro natura",
+          "published_at": "2026-11-21T05:46:00Z",
+          "language": "it",
+          "publisher": "Rai News · Esteri",
+          "group": "Rai",
+          "author": "",
+          "source_id": "rai-esteri",
+          "license": "",
+          "terms": "https://www.rainews.it/rss",
+          "ai_allowed": false,
+          "tags": [
+            "Esteri",
+            "Ufo",
+            "Medio Oriente",
+            "Pentagono"
+          ]
+        }
+      ],
+      "related_sources": [],
+      "rank": 23
+    },
+    {
+      "id": "d62d6f07265b470d5d1faedf",
+      "title": "Vertice con Xi e Putin, Trump: \"Incontro storico e riuscito\"",
+      "summary": "Il presidente americano traccia un bilancio della missione e rivendica i risultati ottenuti",
+      "category": "Società",
+      "region": "Europa",
+      "published_at": "2026-11-21T03:00:00Z",
+      "mode": "rss",
+      "claims": [],
+      "context": "Il feed non fornisce contesto sufficiente per una ricostruzione: consulta la fonte originale.",
+      "uncertainty": "Una singola fonte non costituisce una verifica indipendente. Il feed può omettere dettagli e aggiornamenti.",
+      "sources": [
+        {
+          "id": "d62d6f07265b470d5d1faedf",
+          "url": "https://www.rainews.it/video/2026/11/vertice-con-xi-e-putin-trump-incontro-storico-e-riuscito-b015008f-d3d3-4792-bce0-957886505932.html",
+          "title": "Vertice con Xi e Putin, Trump: \"Incontro storico e riuscito\"",
+          "description": "Il presidente americano traccia un bilancio della missione e rivendica i risultati ottenuti",
+          "published_at": "2026-11-21T03:00:00Z",
+          "language": "it",
+          "publisher": "Rai News · Esteri",
+          "group": "Rai",
+          "author": "",
+          "source_id": "rai-esteri",
+          "license": "",
+          "terms": "https://www.rainews.it/rss",
+          "ai_allowed": false,
+          "tags": [
+            "Esteri",
+            "conferenza stampa",
+            "Cina",
+            "Russia",
+            "USA",
+            "Donald Trump"
+          ]
+        }
+      ],
+      "related_sources": [],
+      "rank": 24
+    },
+    {
+      "id": "06b3467848ca901dff87b48b",
+      "title": "Trump \"Rapporto fantastico con Xi e Putin\"",
+      "summary": "Dal vertice però nessuna svolta sul conflitto in Ucraina",
+      "category": "Società",
+      "region": "Europa",
+      "published_at": "2026-11-21T02:55:00Z",
+      "mode": "rss",
+      "claims": [],
+      "context": "Il feed non fornisce contesto sufficiente per una ricostruzione: consulta la fonte originale.",
+      "uncertainty": "Una singola fonte non costituisce una verifica indipendente. Il feed può omettere dettagli e aggiornamenti.",
+      "sources": [
+        {
+          "id": "06b3467848ca901dff87b48b",
+          "url": "https://www.rainews.it/video/2026/11/trump-su-incontro-con-xi-e-putin-rapporto-fantastico-a05bee26-8006-497f-82ff-4eae73a9acc1.html",
+          "title": "Trump \"Rapporto fantastico con Xi e Putin\"",
+          "description": "Dal vertice però nessuna svolta sul conflitto in Ucraina",
+          "published_at": "2026-11-21T02:55:00Z",
+          "language": "it",
+          "publisher": "Rai News · Esteri",
+          "group": "Rai",
+          "author": "",
+          "source_id": "rai-esteri",
+          "license": "",
+          "terms": "https://www.rainews.it/rss",
+          "ai_allowed": false,
+          "tags": [
+            "Esteri",
+            "Shenzen",
+            "Donald Trump",
+            "Putin",
+            "Xi Jingping"
+          ]
+        }
+      ],
+      "related_sources": [],
+      "rank": 25
+    },
+    {
+      "id": "3796427497da5478dce28f7a",
+      "title": "Trump: \"L'Iran non farà un accordo per me accettabile\"",
+      "summary": "\"Vogliono raggiungere un accordo, ma non vogliono un accordo che sia accettabile per me.\" Queste le parole di trump in conferenza stampa: \"Vogliamo un accordo vero, non un accordo fasullo, come quelli che hanno fatto per 51 anni\"",
+      "category": "Società",
+      "region": "Medio Oriente",
+      "published_at": "2026-11-20T18:16:00Z",
+      "mode": "rss",
+      "claims": [],
+      "context": "Il feed non fornisce contesto sufficiente per una ricostruzione: consulta la fonte originale.",
+      "uncertainty": "Una singola fonte non costituisce una verifica indipendente. Il feed può omettere dettagli e aggiornamenti.",
+      "sources": [
+        {
+          "id": "3796427497da5478dce28f7a",
+          "url": "https://www.rainews.it/video/2026/11/presidente-usa-donald-trump-iran-non-fara-un-accordo-per-me-accettabile-c65d5034-272f-4059-8c59-94ac166522f7.html",
+          "title": "Trump: \"L'Iran non farà un accordo per me accettabile\"",
+          "description": "\"Vogliono raggiungere un accordo, ma non vogliono un accordo che sia accettabile per me.\" Queste le parole di trump in conferenza stampa: \"Vogliamo un accordo vero, non un accordo fasullo, come quelli che hanno fatto per 51 anni\"",
+          "published_at": "2026-11-20T18:16:00Z",
+          "language": "it",
+          "publisher": "Rai News · Esteri",
+          "group": "Rai",
+          "author": "",
+          "source_id": "rai-esteri",
+          "license": "",
+          "terms": "https://www.rainews.it/rss",
+          "ai_allowed": false,
+          "tags": [
+            "Esteri",
+            "accordi",
+            "Iran",
+            "Stati Uniti",
+            "Donald Trump"
+          ]
+        }
+      ],
+      "related_sources": [],
+      "rank": 26
+    },
+    {
+      "id": "aaddaae56ccc0502e177d80f",
+      "title": "In Polonia le esercitazioni militari dei Volenterosi per l'Ucraina",
+      "summary": "Nowa Deba è il grande poligono militare polacco dove è in corso l'esercitazione di 11 Paesi e 2.800 soldati",
+      "category": "Geopolitica",
+      "region": "Europa",
+      "published_at": "2026-11-20T20:22:00Z",
+      "mode": "rss",
+      "claims": [],
+      "context": "Il feed non fornisce contesto sufficiente per una ricostruzione: consulta la fonte originale.",
+      "uncertainty": "Una singola fonte non costituisce una verifica indipendente. Il feed può omettere dettagli e aggiornamenti.",
+      "sources": [
+        {
+          "id": "aaddaae56ccc0502e177d80f",
+          "url": "https://www.rainews.it/video/2026/11/in-polonia-le-esercitazioni-militari-dei-volenterosi-per-ucraina-561ae5a9-6fe0-4ef0-8fb7-abd5f474360d.html",
+          "title": "In Polonia le esercitazioni militari dei Volenterosi per l'Ucraina",
+          "description": "Nowa Deba è il grande poligono militare polacco dove è in corso l'esercitazione di 11 Paesi e 2.800 soldati",
+          "published_at": "2026-11-20T20:22:00Z",
+          "language": "it",
+          "publisher": "Rai News · Esteri",
+          "group": "Rai",
+          "author": "",
+          "source_id": "rai-esteri",
+          "license": "",
+          "terms": "https://www.rainews.it/rss",
+          "ai_allowed": false,
+          "tags": [
+            "Esteri",
+            "Esercitazione militare",
+            "Guerra Ucraina",
+            "Polonia",
+            "coalizione dei volenterosi"
+          ]
+        }
+      ],
+      "related_sources": [],
+      "rank": 27
+    },
+    {
+      "id": "bf3dabad368bfc3b917e019a",
+      "title": "Andy Burnham a Bruxelles firma l'accordo \"reset\" per i rapporti UE-Regno Unito dopo la Brexit",
+      "summary": "Il premier britannico: \"È un bel giorno per la Gran Bretagna, un bel giorno per l'Europa e per le persone in tutta Europa e in tutto il Regno Unito\"",
+      "category": "Società",
+      "region": "Europa",
+      "published_at": "2026-11-20T21:14:00Z",
+      "mode": "rss",
+      "claims": [],
+      "context": "Il feed non fornisce contesto sufficiente per una ricostruzione: consulta la fonte originale.",
+      "uncertainty": "Una singola fonte non costituisce una verifica indipendente. Il feed può omettere dettagli e aggiornamenti.",
+      "sources": [
+        {
+          "id": "bf3dabad368bfc3b917e019a",
+          "url": "https://www.rainews.it/articoli/2026/11/andy-burnham-a-bruxelles-per-rilanciare-i-rapporti-ue-regno-unito-dopo-la-brexit-d69f60b1-6499-45ad-8b80-da3cc13ad532.html",
+          "title": "Andy Burnham a Bruxelles firma l'accordo \"reset\" per i rapporti UE-Regno Unito dopo la Brexit",
+          "description": "Il premier britannico: \"È un bel giorno per la Gran Bretagna, un bel giorno per l'Europa e per le persone in tutta Europa e in tutto il Regno Unito\"",
+          "published_at": "2026-11-20T21:14:00Z",
+          "language": "it",
+          "publisher": "Rai News · Esteri",
+          "group": "Rai",
+          "author": "",
+          "source_id": "rai-esteri",
+          "license": "",
+          "terms": "https://www.rainews.it/rss",
+          "ai_allowed": false,
+          "tags": [
+            "Esteri",
+            "Brexit",
+            "Bruxelles",
+            "Antonio Costa",
+            "Andy Burnham",
+            "Von der Leyen"
+          ]
+        }
+      ],
+      "related_sources": [],
+      "rank": 28
+    },
+    {
+      "id": "0782a7be0ff0152e5ecf25c1",
+      "title": "Accordo tra Ue e Londra ma i britannici sembrano ancora divisi su Brexit",
+      "summary": "A partire dal 2028 sarà eliminata gran parte dei controlli doganali sui prodotti agroalimentari da e per l'Europa",
+      "category": "Società",
+      "region": "Europa",
+      "published_at": "2026-11-20T21:03:00Z",
+      "mode": "rss",
+      "claims": [],
+      "context": "Il feed non fornisce contesto sufficiente per una ricostruzione: consulta la fonte originale.",
+      "uncertainty": "Una singola fonte non costituisce una verifica indipendente. Il feed può omettere dettagli e aggiornamenti.",
+      "sources": [
+        {
+          "id": "0782a7be0ff0152e5ecf25c1",
+          "url": "https://www.rainews.it/video/2026/11/accordo-tra-ue-e-londra-ma-i-britannici-sembrano-ancora-divisi-su-brexit-0ac684ff-307c-452b-ae23-c4c54ed46e7c.html",
+          "title": "Accordo tra Ue e Londra ma i britannici sembrano ancora divisi su Brexit",
+          "description": "A partire dal 2028 sarà eliminata gran parte dei controlli doganali sui prodotti agroalimentari da e per l'Europa",
+          "published_at": "2026-11-20T21:03:00Z",
+          "language": "it",
+          "publisher": "Rai News · Esteri",
+          "group": "Rai",
+          "author": "",
+          "source_id": "rai-esteri",
+          "license": "",
+          "terms": "https://www.rainews.it/rss",
+          "ai_allowed": false,
+          "tags": [
+            "Esteri",
+            "Brexit",
+            "Europa e Regno Unito",
+            "Regno Unito",
+            "Londra"
+          ]
+        }
+      ],
+      "related_sources": [],
+      "rank": 29
+    },
+    {
+      "id": "49e6712e5b0a36653b4e2501",
+      "title": "Giovani in piazza in Europa: proteste per futuro, scuola e pace",
+      "summary": "Cortei dal Regno Unito alla Spagna fino ai Balcani contro il caro vita, la leva militare e il taglio alle risorse per l'istruzione",
+      "category": "Geopolitica",
+      "region": "Europa",
+      "published_at": "2026-11-20T18:36:00Z",
+      "mode": "rss",
+      "claims": [],
+      "context": "Il feed non fornisce contesto sufficiente per una ricostruzione: consulta la fonte originale.",
+      "uncertainty": "Una singola fonte non costituisce una verifica indipendente. Il feed può omettere dettagli e aggiornamenti.",
+      "sources": [
+        {
+          "id": "49e6712e5b0a36653b4e2501",
+          "url": "https://www.rainews.it/video/2026/11/giovani-in-piazza-in-europa-proteste-per-futuro-scuola-e-pace-b4cc3585-c71c-49b5-b47c-f5101d29a823.html",
+          "title": "Giovani in piazza in Europa: proteste per futuro, scuola e pace",
+          "description": "Cortei dal Regno Unito alla Spagna fino ai Balcani contro il caro vita, la leva militare e il taglio alle risorse per l'istruzione",
+          "published_at": "2026-11-20T18:36:00Z",
+          "language": "it",
+          "publisher": "Rai News · Esteri",
+          "group": "Rai",
+          "author": "",
+          "source_id": "rai-esteri",
+          "license": "",
+          "terms": "https://www.rainews.it/rss",
+          "ai_allowed": false,
+          "tags": [
+            "Esteri",
+            "proteste",
+            "giovani",
+            "Europa",
+            "Tg3",
+            "Lorenzo Gottardo"
+          ]
+        }
+      ],
+      "related_sources": [],
+      "rank": 30
+    }
+  ],
+  "warnings": [
+    "Alcuni articoli in lingua straniera esclusi: traduzione italiana non disponibile o non validata.",
+    "Pluralità limitata: meno di tre gruppi editoriali presenti.",
+    "Aree non coperte in questa edizione: Africa, Asia."
+  ],
+  "coverage": {
+    "regions": {
+      "Non determinata": 7,
+      "Americhe": 5,
+      "Oceania": 1,
+      "Globale": 2,
+      "Medio Oriente": 4,
+      "Europa": 11
+    },
+    "publishers": {
+      "Rai": 30
+    }
+  },
+  "pipeline": {
+    "sources": [
+      {
+        "id": "gv-it",
+        "name": "Global Voices · Italiano",
+        "language": "it",
+        "feed": "https://it.globalvoices.org/feed/",
+        "status": "not_modified",
+        "accepted": 0,
+        "rejected": {}
+      },
+      {
+        "id": "gv-en",
+        "name": "Global Voices · English",
+        "language": "en",
+        "feed": "https://globalvoices.org/feed/",
+        "status": "not_modified",
+        "accepted": 4,
+        "rejected": {}
+      },
+      {
+        "id": "gv-es",
+        "name": "Global Voices · Español",
+        "language": "es",
+        "feed": "https://es.globalvoices.org/feed/",
+        "status": "not_modified",
+        "accepted": 2,
+        "rejected": {}
+      },
+      {
+        "id": "gv-fr",
+        "name": "Global Voices · Français",
+        "language": "fr",
+        "feed": "https://fr.globalvoices.org/feed/",
+        "status": "not_modified",
+        "accepted": 0,
+        "rejected": {}
+      },
+      {
+        "id": "rai-esteri",
+        "name": "Rai News · Esteri",
+        "language": "it",
+        "feed": "https://www.rainews.it/rss/esteri",
+        "status": "not_modified",
+        "accepted": 30,
+        "rejected": {}
+      },
+      {
+        "id": "bbc-world",
+        "name": "BBC News · World",
+        "language": "en",
+        "feed": "https://feeds.bbci.co.uk/news/world/rss.xml",
+        "status": "ok",
+        "accepted": 28,
+        "rejected": {}
+      }
+    ],
+    "collected": 64,
+    "duplicates_removed": 0,
+    "skipped": {
+      "translation_unavailable": 34
+    },
+    "ai_errors": [],
+    "ai_enabled": false
+  },
+  "profile": "personal"
+}
