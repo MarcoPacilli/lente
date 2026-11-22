@@ -1,5 +1,5 @@
 {
-  "attempted_at": "2026-11-22T13:49:45Z",
+  "attempted_at": "2026-11-22T13:55:06Z",
   "success": false,
   "sources": [
     {
@@ -7,52 +7,69 @@
       "name": "Global Voices · Italiano",
       "language": "it",
       "feed": "https://it.globalvoices.org/feed/",
-      "status": "ok",
+      "status": "not_modified",
       "accepted": 0,
-      "rejected": {
-        "expired": 10
-      }
+      "rejected": {}
     },
     {
       "id": "gv-en",
       "name": "Global Voices · English",
       "language": "en",
       "feed": "https://globalvoices.org/feed/",
-      "status": "ok",
+      "status": "not_modified",
       "accepted": 4,
-      "rejected": {
-        "expired": 11
-      }
+      "rejected": {}
     },
     {
       "id": "gv-es",
       "name": "Global Voices · Español",
       "language": "es",
       "feed": "https://es.globalvoices.org/feed/",
-      "status": "ok",
+      "status": "not_modified",
       "accepted": 2,
-      "rejected": {
-        "expired": 8
-      }
+      "rejected": {}
     },
     {
       "id": "gv-fr",
       "name": "Global Voices · Français",
       "language": "fr",
       "feed": "https://fr.globalvoices.org/feed/",
-      "status": "ok",
+      "status": "not_modified",
       "accepted": 0,
-      "rejected": {
-        "expired": 10
-      }
+      "rejected": {}
     }
   ],
   "collected": 6,
   "published": 0,
   "skipped": {
-    "translation_unavailable": 6
+    "translation_failed": 6
   },
-  "ai_errors": [],
+  "ai_errors": [
+    {
+      "id": "8a79b70e79b0c61f5aeaa2e1",
+      "error": "ValueError: Evidenza non riscontrata"
+    },
+    {
+      "id": "6d100a6de72de8d8f37a9a30",
+      "error": "ValueError: Evidenza non riscontrata"
+    },
+    {
+      "id": "3d11fb1cb1a53fa666d3d7f1",
+      "error": "ValueError: Evidenza non riscontrata"
+    },
+    {
+      "id": "263194541dc2a29e32715730",
+      "error": "ValueError: Evidenza non riscontrata"
+    },
+    {
+      "id": "b5d2535b7c71fa190dd4c267",
+      "error": "ValueError: Evidenza non riscontrata"
+    },
+    {
+      "id": "4acc0a6113d706ec0d447173",
+      "error": "ValueError: Evidenza non riscontrata"
+    }
+  ],
   "warnings": [
     "Alcuni articoli in lingua straniera esclusi: traduzione italiana non disponibile o non validata.",
     "Pluralità limitata: meno di tre gruppi editoriali presenti.",
