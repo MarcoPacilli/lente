@@ -1,0 +1,35 @@
+'use strict';
+const assert=require('node:assert/strict');
+const fs=require('node:fs');
+const vm=require('node:vm');
+const path=require('node:path');
+const source=fs.readFileSync(path.join(__dirname,'../web/app.js'),'utf8');
+const block=source.split('// BEGIN SERVER CLOCK')[1].split('// END SERVER CLOCK')[0];
+let elapsed=0;
+class WrongDeviceDate extends Date {static now(){return Date.parse('2030-01-01T00:00:00Z');}}
+const context=vm.createContext({Date:WrongDeviceDate,performance:{now:()=>elapsed}});
+vm.runInContext(block,context);
+function headers(date,age){return {get:name=>name==='Date'?date:name==='Age'?age:null};}
+context.useServerClock(headers('Sun, 22 Nov 2026 14:21:00 GMT',null));
+assert.equal(context.editionAge('2026-11-22T14:04:00Z'),17*60*1000,'Il clock errato del dispositivo non deve invecchiare una nuova edizione');
+elapsed+=120000;
+assert.equal(context.editionAge('2026-11-22T14:04:00Z'),19*60*1000,'Avanzamento monotono anche con clock del dispositivo errato');
+assert(context.editionAge('2026-11-20T14:04:00Z')>36*3600*1000,'Un’edizione vecchia va ancora segnalata');
+context.useServerClock(headers('Sun, 22 Nov 2026 14:21:00 GMT','600'));
+assert.equal(context.editionAge('2026-11-22T14:04:00Z'),27*60*1000,'Considera Age delle cache HTTP');
+context.useServerClock(headers(null,null));assert.equal(context.editionAge('2026-11-22T14:04:00Z'),null,'Senza tempo server non inventa un’età');
+context.useServerClock(headers('Sun, 22 Nov 2026 14:21:00 GMT','oops'));assert.equal(context.editionAge('2026-11-22T14:04:00Z'),null);
+console.log('PASS: data server, clock dispositivo errato, tempo monotono, cache Age, scadenza reale e data assente.');
+const nodes={};
+context.$=id=>nodes[id]||(nodes[id]={textContent:'',classList:{toggle(){}}});
+context.document={querySelector:()=>({textContent:''})};
+context.fmt=()=> '22 nov 2026, 15:04';
+context.runStatus=null;
+context.edition={origin:'rss',last_success_at:'2026-11-22T14:04:00Z',warnings:[]};
+vm.runInContext(source.slice(source.indexOf('function renderStatus(){'),source.indexOf('async function loadEdition(){')),context);
+context.useServerClock(headers('Sun, 22 Nov 2026 14:21:00 GMT',null));
+context.renderStatus();
+assert(!nodes.updateText.textContent.includes('oltre 36 ore'),'Una edizione di 17 minuti non deve attivare la soglia di 36 ore: millisecondi e secondi devono essere coerenti');
+context.edition.last_success_at='2026-11-20T14:04:00Z';context.renderStatus();
+assert(nodes.updateText.textContent.includes('oltre 36 ore'),'Una vera edizione scaduta deve mantenere l’avviso');
+console.log('PASS: avviso UI assente dopo 17 minuti, presente dopo 48 ore.');

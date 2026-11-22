@@ -149,18 +149,19 @@ TOPICS={
  'Economia': ['econom','inflaz','inflation','mercat','trade','commerc','banca','tariff','dazi'],
  'Tecnologia':['tecnolog','technology','digital','digitale','cyber','intelligenza artificiale','artificial intelligence','internet'],
  'Scienza':['scienz','science','ricerc','research','spazio','space','salute','health'],
+ 'Società':['culinar','food heritage','matrimon','marriage','cultura','culture','tradizion'],
  'Geopolitica':['guerra','war','election','elezion','governo','government','missil','diploma','politic','protest','parliament','parlament']}
 GEOGRAPHY={
  'Medio Oriente':['iran','israel','israele','gaza','palestin','leban','libano','siria','syria','yemen','bahrain','bahrein','iraq','liban'],
  'Africa':['africa','camerun','cameroon','kenya','nigeria','sudan','congo','ethiopia','etiopia','senegal','sudafrica','south africa'],
  'Asia':['asia','cambog','cambod','china','cinese','chinese','india','japan','giappone','nepal','bangladesh','indonesia','korea','corea','pakistan'],
- 'Europa':['europa','europe','italia','italy','france','francia','german','ucrain','ukrain','russia','finland','kosovo','serbia','georgia','poland','polonia','britain','unito','spain','spagna'],
+ 'Europa':['europa','europe','italia','italy','france','francia','german','ucrain','ukrain','russia','finland','kosovo','serbia','georgia','poland','polonia','britain','unito','spain','spagna','españa','espana','madrid','barcelona'],
  'Americhe':['america','brasil','brazil','messico','mexic','stati uniti','united states','canada','cile','chile','argentin','peru','perù','venezuela','haiti'],
  'Oceania':['australia','new zealand','nuova zelanda','pacific','oceania','fiji'],
  'Globale':['mondial','global','onu','united nations','cop31']}
 def classify(text, mapping, default):
-    value=unicodedata.normalize('NFKD',text.casefold())
-    hits={k:sum(bool(re.search(r'\b'+re.escape(word),value)) for word in words) for k,words in mapping.items()}
+    value=normalize(text)
+    hits={k:sum(bool(re.search(r'\b'+re.escape(normalize(word)),value)) for word in words) for k,words in mapping.items()}
     return max(hits,key=hits.get) if any(hits.values()) else default
 
 def base_story(item):
@@ -236,7 +237,7 @@ def build(items, statuses, now, limit=30, provider=None):
         if provider and item['ai_allowed']:
             try: story=provider.enrich(story)
             except Exception as e:
-                errors.append({'id':item['id'],'error':f'{type(e).__name__}: {str(e)[:100]}'})
+                errors.append({'id':item['id'],'title':item['title'],'url':item['url'],'error':f'{type(e).__name__}: {str(e)[:100]}'})
                 if item['language']!='it': skipped['translation_failed']+=1; continue
         elif item['language']!='it':
             skipped['translation_unavailable']+=1; continue

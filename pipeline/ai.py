@@ -35,31 +35,59 @@ class Ollama:
     def enrich(self, story):
         source=story['sources'][0]
         payload={k:source[k] for k in ('id','title','description','language')}
-        key=digest(json.dumps(payload,sort_keys=True)+self.model+PROMPT)
+        key=digest(json.dumps(payload,sort_keys=True)+self.model+PROMPT+'structured-v2')
         path=self.cache_dir/(key+'.json')
         output=load_json(path,None)
+        if output is not None:
+            try: self.validate(output,source)
+            except (ValueError,TypeError,KeyError): output=None
+        feedback=''
         if output is None:
-            if self.unavailable or self.requests>=self.max_requests:
-                raise ValueError('Modello non disponibile o budget locale di 30 richieste raggiunto')
-            self.requests+=1
-            body={'model':self.model,'stream':False,'think':False,'format':'json','options':{'temperature':0,'num_predict':1000,'num_ctx':4096},
-                  'messages':[{'role':'system','content':PROMPT},{'role':'user','content':json.dumps(payload,ensure_ascii=False)}]}
-            req=request.Request(self.endpoint.rstrip('/')+'/api/chat',data=json.dumps(body).encode(),headers={'Content-Type':'application/json'})
-            try:
-                with request.urlopen(req,timeout=90) as response:
-                    raw=response.read(100_001)
-                    if len(raw)>100_000: raise ValueError('Risposta AI troppo grande')
-                    output=json.loads(json.loads(raw)['message']['content'])
-            except OSError:
-                self.unavailable=True
-                raise
-        self.validate(output, source)
-        enriched={**story,**{k:output[k] for k in ('title','summary','category','region','claims')},'mode':'ai',
+            for attempt in range(2):
+                try:
+                    output=self.generate(payload,source,feedback)
+                    self.validate(output,source)
+                    break
+                except (ValueError,TypeError,KeyError) as exc:
+                    if attempt==1: raise
+                    feedback='Il tentativo precedente è stato rifiutato: '+str(exc)+'. Correggi il formato usando solo i dati forniti. Se non puoi supportare un punto con una citazione esatta, omettilo.'
+        # Metadati derivati dall'originale: il modello non può cancellare un'area già riconosciuta.
+        enriched={**story,**{k:output[k] for k in ('title','summary','claims')},'mode':'ai',
                   'context':output.get('context') or story['context'],
                   'uncertainty':'Sintesi automatica non revisionata, basata solo sui metadati RSS. Le etichette sono automatiche: controlla le evidenze e l’originale.'}
         validate_edition({'schema_version':2,'articles':[enriched]})
         atomic_json(path,output)
         return enriched
+    def generate(self,payload,source,feedback=''):
+        if self.unavailable or self.requests>=self.max_requests:
+            raise ValueError('Modello non disponibile o budget locale di 30 richieste raggiunto')
+        self.requests+=1
+        text=lambda limit,minimum=0:{'type':'string','maxLength':limit,'minLength':minimum}
+        claim={'type':'object','additionalProperties':False,'required':['text','kind','source_id','evidence'],
+               'properties':{'text':text(300,1),'kind':{'type':'string','enum':KINDS},
+                             'source_id':{'type':'string','enum':[source['id']]},'evidence':text(500,12)}}
+        schema={'type':'object','additionalProperties':False,
+                'required':['language','title','summary','category','region','context','claims'],
+                'properties':{'language':{'type':'string','enum':['it']},'title':text(180,1),
+                              'summary':text(260,1),'category':{'type':'string','enum':CATEGORIES},
+                              'region':{'type':'string','enum':REGIONS},'context':text(500),
+                              'claims':{'type':'array','maxItems':3,'items':claim}}}
+        user=json.dumps(payload,ensure_ascii=False)
+        if feedback: user+='\nNOTA DI VALIDAZIONE DEL SISTEMA: '+feedback
+        body={'model':self.model,'stream':False,'think':False,'format':schema,
+              'options':{'temperature':0,'num_predict':1400,'num_ctx':4096},
+              'messages':[{'role':'system','content':PROMPT},{'role':'user','content':user}]}
+        req=request.Request(self.endpoint.rstrip('/')+'/api/chat',data=json.dumps(body).encode(),headers={'Content-Type':'application/json'})
+        try:
+            with request.urlopen(req,timeout=90) as response:
+                raw=response.read(100_001)
+                if len(raw)>100_000: raise ValueError('Risposta AI troppo grande')
+                envelope=json.loads(raw)
+                if envelope.get('done_reason')=='length': raise ValueError('Risposta AI troncata')
+                return json.loads(envelope['message']['content'])
+        except OSError:
+            self.unavailable=True
+            raise
     @staticmethod
     def validate(o, source):
         if not isinstance(o,dict) or o.get('language')!='it': raise ValueError('Output non italiano dichiarato')
