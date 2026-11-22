@@ -1,0 +1,97 @@
+name: Lente · raccolta e pubblicazione quotidiana
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '17 5 * * *'
+permissions:
+  contents: read
+concurrency:
+  group: lente-daily
+  cancel-in-progress: false
+jobs:
+  update:
+    # Evita minuti a consumo in repository privati. Standard runner pubblici gratuiti.
+    if: github.event.repository.private == false
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    permissions:
+      contents: write
+    outputs:
+      success: ${{ steps.update.outputs.success }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Test pipeline
+        run: python -m unittest discover -s tests -v
+      - uses: actions/cache@v4
+        with:
+          path: .cache
+          key: lente-v02-${{ github.run_id }}
+          restore-keys: lente-v02-
+      - name: Avvia modello locale gratuito (opzionale)
+        if: vars.LENTE_AI == 'true'
+        run: |
+          docker run -d --name lente-ollama -p 127.0.0.1:11434:11434 ollama/ollama:0.13.0
+          for attempt in $(seq 1 30); do
+            if curl --fail --silent http://127.0.0.1:11434/api/tags; then break; fi
+            sleep 1
+          done
+          docker exec lente-ollama ollama pull qwen3:1.7b
+      - name: Aggiorna solo fonti abilitate alla pubblicazione
+        id: update
+        env:
+          LENTE_AI: ${{ vars.LENTE_AI }}
+          OLLAMA_MODEL: qwen3:1.7b
+        shell: bash
+        run: |
+          ai_mode=none
+          if [ "$LENTE_AI" = true ]; then ai_mode=ollama; fi
+          if python -m pipeline.update --profile public --limit 15 --ai "$ai_mode"; then
+            echo 'success=true' >> "$GITHUB_OUTPUT"
+          else
+            echo 'success=false' >> "$GITHUB_OUTPUT"
+          fi
+      - name: Conserva edizione e stato del tentativo
+        run: |
+          git config user.name 'Lente updater'
+          git config user.email 'lente-updater@users.noreply.github.com'
+          git add web/data/news.json web/data/status.json
+          if ! git diff --cached --quiet; then
+            git commit -m 'Aggiorna edizione e stato delle fonti'
+            git push
+          fi
+      - uses: actions/upload-artifact@v4
+        with:
+          name: lente-web
+          path: web
+          retention-days: 1
+  deploy:
+    needs: update
+    if: needs.update.result == 'success'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: lente-web
+          path: web
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: web
+      - name: Pubblica
+        id: deploy
+        uses: actions/deploy-pages@v4
+      - name: Segnala un aggiornamento fallito dopo aver pubblicato lo stato
+        if: needs.update.outputs.success != 'true'
+        run: |
+          echo 'Raccolta fallita. Edizione precedente conservata e stato del tentativo pubblicato.'
+          exit 1
