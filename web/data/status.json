@@ -1,71 +1,61 @@
 {
-  "attempted_at": "2026-11-22T12:34:20Z",
-  "success": true,
+  "attempted_at": "2026-11-22T13:49:45Z",
+  "success": false,
   "sources": [
     {
       "id": "gv-it",
       "name": "Global Voices · Italiano",
       "language": "it",
       "feed": "https://it.globalvoices.org/feed/",
-      "status": "not_modified",
+      "status": "ok",
       "accepted": 0,
-      "rejected": {}
+      "rejected": {
+        "expired": 10
+      }
     },
     {
       "id": "gv-en",
       "name": "Global Voices · English",
       "language": "en",
       "feed": "https://globalvoices.org/feed/",
-      "status": "not_modified",
+      "status": "ok",
       "accepted": 4,
-      "rejected": {}
+      "rejected": {
+        "expired": 11
+      }
     },
     {
       "id": "gv-es",
       "name": "Global Voices · Español",
       "language": "es",
       "feed": "https://es.globalvoices.org/feed/",
-      "status": "not_modified",
+      "status": "ok",
       "accepted": 2,
-      "rejected": {}
+      "rejected": {
+        "expired": 8
+      }
     },
     {
       "id": "gv-fr",
       "name": "Global Voices · Français",
       "language": "fr",
       "feed": "https://fr.globalvoices.org/feed/",
-      "status": "not_modified",
-      "accepted": 0,
-      "rejected": {}
-    },
-    {
-      "id": "rai-esteri",
-      "name": "Rai News · Esteri",
-      "language": "it",
-      "feed": "https://www.rainews.it/rss/esteri",
-      "status": "not_modified",
-      "accepted": 30,
-      "rejected": {}
-    },
-    {
-      "id": "bbc-world",
-      "name": "BBC News · World",
-      "language": "en",
-      "feed": "https://feeds.bbci.co.uk/news/world/rss.xml",
       "status": "ok",
-      "accepted": 28,
-      "rejected": {}
+      "accepted": 0,
+      "rejected": {
+        "expired": 10
+      }
     }
   ],
-  "collected": 64,
-  "published": 30,
+  "collected": 6,
+  "published": 0,
   "skipped": {
-    "translation_unavailable": 34
+    "translation_unavailable": 6
   },
   "ai_errors": [],
   "warnings": [
     "Alcuni articoli in lingua straniera esclusi: traduzione italiana non disponibile o non validata.",
     "Pluralità limitata: meno di tre gruppi editoriali presenti.",
-    "Aree non coperte in questa edizione: Africa, Asia."
+    "Aree non coperte in questa edizione: Europa, Africa, Asia, Medio Oriente, Americhe, Oceania."
   ]
 }
