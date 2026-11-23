@@ -20,7 +20,7 @@ def main():
   try:
    def replay_transport(*args):
     with urlopen(url+'/replay.xml') as r:return r.read(),dict(r.headers)
-   source=json.loads((ROOT/'config/sources.json').read_text())['sources'][0]
+   source=next(x for x in json.loads((ROOT/'config/sources.json').read_text())['sources'] if x['id']=='gv-it')
    now=dt.datetime(2026,11,20,12,tzinfo=UTC)
    items,statuses=collect([source],now,168,root/'cache',replay_transport)
    edition=build(items,statuses,now,30)

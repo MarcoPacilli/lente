@@ -61,7 +61,7 @@ class RestrictedRedirect(request.HTTPRedirectHandler):
 def fetch(url, hosts, headers=None, timeout=18):
     allowed_url(url,hosts)
     opener=request.build_opener(RestrictedRedirect(hosts))
-    req=request.Request(url,headers={'User-Agent':'Lente/0.2 (personal RSS reader; daily fetch)','Accept':'application/rss+xml, application/atom+xml, application/xml, text/xml',**(headers or {})})
+    req=request.Request(url,headers={'User-Agent':'Lente/0.3 (non-commercial RSS reader; daily fetch)','Accept':'application/rss+xml, application/atom+xml, application/xml, text/xml, */*;q=0.8',**(headers or {})})
     with opener.open(req,timeout=timeout) as r:
         data=r.read(MAX_BYTES+1)
         if len(data)>MAX_BYTES: raise ValueError('Feed oltre 2 MB')
@@ -96,7 +96,14 @@ def parse_feed(raw, source, now, window_hours):
     for node in root.iter():
         if local(node.tag) not in ('item','entry'): continue
         title=clean(field(node,'title'))
-        description=clean(field(node,'description','summary'))[:480]
+        description=clean(field(node,'description','summary'))
+        if not description:
+            for group in node:
+                if local(group.tag)=='group':
+                    description=clean(field(group,'description','text'))
+                    if description:break
+        if len(title)>500 or len(description)>4000:
+            rejected['metadata_too_long']+=1;continue
         # Mai content:encoded né articolo completo: solo metadati pubblicati nel feed.
         link=field(node,'link')
         if local(node.tag)=='entry':
@@ -114,47 +121,56 @@ def parse_feed(raw, source, now, window_hours):
         if source.get('requires_author') and not author:
             rejected['missing_author']+=1; continue
         tags=[clean(c.text) for c in node if local(c.tag)=='category' and c.text]
-        rows.append({'id':digest(link),'url':link,'title':title[:260],'description':description,
+        rows.append({'id':digest(link),'url':link,'title':title,'description':description,
                      'published_at':iso(published),'language':source['language'],'publisher':source['name'],
                      'group':source['group'],'author':author,'source_id':source['id'],
                      'license':source.get('license',''),'terms':source['terms'],
-                     'ai_allowed':source.get('ai_allowed',False),'tags':tags})
+                     'ai_allowed':source.get('ai_allowed',False),'tags':tags,
+                     'genre':source.get('genre','notizia'),'default_category':source.get('category'),
+                     'rights':source.get('rights','feed'),'preserve_metadata':source.get('preserve_metadata',False)})
     return rows, dict(rejected)
 
 def collect(sources, now, window_hours, cache_dir, transport=fetch):
     def one(source):
-        path=Path(cache_dir)/(source['id']+'.json'); cached=load_json(path,{})
-        headers={k:v for k,v in {'If-None-Match':cached.get('etag'),'If-Modified-Since':cached.get('last_modified')}.items() if v}
-        status={'id':source['id'],'name':source['name'],'language':source['language'],'feed':source['feed'],'status':'ok'}
+        path=Path(cache_dir)/(source['id']+'.json');cached=load_json(path,{})
+        fingerprint=digest(json.dumps(source,sort_keys=True,ensure_ascii=False)+'cache-v3')
+        valid_cache=cached.get('fingerprint')==fingerprint
+        headers={k:v for k,v in {'If-None-Match':cached.get('etag'),'If-Modified-Since':cached.get('last_modified')}.items() if v} if valid_cache else {}
+        status={'id':source['id'],'name':source['name'],'group':source['group'],'language':source['language'],'feed':source['feed'],'status':'ok'}
         try:
             try:
                 raw,h=transport(source['feed'],source['feed_hosts'],headers)
-                rows,rejected=parse_feed(raw,source,now,window_hours)
-                atomic_json(path,{'etag':h.get('ETag'),'last_modified':h.get('Last-Modified'),'items':rows})
-            except error.HTTPError as e:
-                if e.code!=304 or 'items' not in cached: raise
-                rows=[r for r in cached['items'] if now-dt.timedelta(hours=window_hours)<=date(r['published_at'])<=now+dt.timedelta(minutes=15)]
-                rejected={}; status['status']='not_modified'
+                # Conserva sette giorni di metadati: una precedente finestra di 48 ore non deve svuotare la cache.
+                all_rows,rejected=parse_feed(raw,source,now,168)
+                atomic_json(path,{'fingerprint':fingerprint,'etag':h.get('ETag'),'last_modified':h.get('Last-Modified'),
+                                 'items':all_rows,'rejected':rejected})
+            except error.HTTPError as exc:
+                if exc.code!=304 or not valid_cache or 'items' not in cached:raise
+                all_rows=cached['items'];rejected=dict(cached.get('rejected',{}));status['status']='not_modified'
+            rows=[]
+            for row in all_rows:
+                stamp=date(row.get('published_at'))
+                if stamp and now-dt.timedelta(hours=window_hours)<=stamp<=now+dt.timedelta(minutes=15):rows.append(row)
+                else:rejected['outside_window']=rejected.get('outside_window',0)+1
             status.update(accepted=len(rows),rejected=rejected)
             return rows,status
-        except Exception as e:
-            # Non spostare la data dell'ultima edizione e non spacciare la cache per nuova raccolta.
-            status.update(status='error',accepted=0,error=f'{type(e).__name__}: {str(e)[:150]}')
+        except Exception as exc:
+            status.update(status='error',accepted=0,error=f'{type(exc).__name__}: {str(exc)[:180]}')
             return [],status
-    with concurrent.futures.ThreadPoolExecutor(max_workers=4) as pool: results=list(pool.map(one,sources))
-    return [item for rows,_ in results for item in rows], [s for _,s in results]
+    with concurrent.futures.ThreadPoolExecutor(max_workers=4) as pool:results=list(pool.map(one,sources))
+    return [r for rows,_ in results for r in rows],[status for _,status in results]
 
 TOPICS={
- 'Ambiente': ['clima','climate','climat','cop31','ambiente','emission','alluvion','flood','biodivers','ambiental'],
+ 'Ambiente': ['environment','ecocide','ecocidio','clima','climate','climat','cop31','ambiente','emission','alluvion','flood','biodivers','ambiental'],
  'Economia': ['econom','inflaz','inflation','mercat','trade','commerc','banca','tariff','dazi'],
  'Tecnologia':['tecnolog','technology','digital','digitale','cyber','intelligenza artificiale','artificial intelligence','internet'],
  'Scienza':['scienz','science','ricerc','research','spazio','space','salute','health'],
  'Società':['culinar','food heritage','matrimon','marriage','cultura','culture','tradizion'],
- 'Geopolitica':['guerra','war','election','elezion','governo','government','missil','diploma','politic','protest','parliament','parlament']}
+ 'Geopolitica':['governance','international relations','diritto internazionale','guerra','war','election','elezion','governo','government','missil','diploma','politic','protest','parliament','parlament']}
 GEOGRAPHY={
  'Medio Oriente':['iran','israel','israele','gaza','palestin','leban','libano','siria','syria','yemen','bahrain','bahrein','iraq','liban'],
- 'Africa':['africa','camerun','cameroon','kenya','nigeria','sudan','congo','ethiopia','etiopia','senegal','sudafrica','south africa'],
- 'Asia':['asia','cambog','cambod','china','cinese','chinese','india','japan','giappone','nepal','bangladesh','indonesia','korea','corea','pakistan'],
+ 'Africa':['kenia','africa','camerun','cameroon','kenya','nigeria','sudan','congo','ethiopia','etiopia','senegal','sudafrica','south africa'],
+ 'Asia':['asia','cambog','cambod','china','cinese','chinese','india','japan','giappone','nepal','bangladesh','indonesia','korea','corea','pakistan','kazakhstan','kazajistan','kazakistan'],
  'Europa':['europa','europe','italia','italy','france','francia','german','ucrain','ukrain','russia','finland','kosovo','serbia','georgia','poland','polonia','britain','unito','spain','spagna','españa','espana','madrid','barcelona'],
  'Americhe':['america','brasil','brazil','messico','mexic','stati uniti','united states','canada','cile','chile','argentin','peru','perù','venezuela','haiti'],
  'Oceania':['australia','new zealand','nuova zelanda','pacific','oceania','fiji'],
@@ -166,11 +182,12 @@ def classify(text, mapping, default):
 
 def base_story(item):
     text=item['title']+' '+item['description']+' '+' '.join(item.get('tags',[]))
-    return {'id':item['id'],'title':item['title'],'summary':item['description'][:240] or 'Il feed non contiene un sottotitolo. Apri la fonte originale.',
-            'category':classify(text,TOPICS,'Società'),'region':classify(text,GEOGRAPHY,'Non determinata'),
-            'published_at':item['published_at'],'mode':'rss','claims':[],
-            'context':'Il feed non fornisce contesto sufficiente per una ricostruzione: consulta la fonte originale.',
-            'uncertainty':'Una singola fonte non costituisce una verifica indipendente. Il feed può omettere dettagli e aggiornamenti.',
+    return {'id':item['id'],'title':item['title'],'summary':item['description'] or 'Il feed non contiene un sottotitolo. Apri la fonte originale.',
+            'category':item.get('default_category') or classify(text,TOPICS,'Società'),'region':classify(text,GEOGRAPHY,'Non determinata'),
+            'published_at':item['published_at'],'mode':'rss','review_status':'original_feed',
+            'genre':item.get('genre','notizia'),'claims':[],
+            'context':'Questa scheda riporta il titolo e l’anticipazione forniti dalla testata. Per il contesto completo apri l’articolo originale: Lente non ricostruisce dettagli assenti dal feed.',
+            'uncertainty':'Il testo è attribuito alla fonte indicata, non è una verifica indipendente. Dichiarazioni, valutazioni e incertezze restano quelle della testata. Il feed può omettere dettagli o aggiornamenti.',
             'sources':[item], 'related_sources':[]}
 
 def normalize(text):
@@ -227,32 +244,37 @@ def validate_edition(edition):
             if src is None or claim['evidence'] not in src['title']+' '+src['description']: raise ValueError('Evidenza non riscontrata')
     return edition
 
-def build(items, statuses, now, limit=30, provider=None):
-    stories=[]; skipped=collections.Counter(); errors=[]
-    # Dedup URL prima di spendere tempo nel modello.
+def build(items, statuses, now, limit=50, provider=None):
+    stories=[];drafts=[];skipped=collections.Counter();errors=[]
     unique={}
-    for item in items: unique.setdefault(item['url'],item)
+    for item in items:
+        current=unique.setdefault(item['url'],dict(item))
+        if not current.get('default_category') and item.get('default_category'):current['default_category']=item['default_category']
+    # L'AI non è più un punto di guasto per i testi già disponibili in italiano.
     for item in unique.values():
         story=base_story(item)
-        if provider and item['ai_allowed']:
-            try: story=provider.enrich(story)
-            except Exception as e:
-                errors.append({'id':item['id'],'title':item['title'],'url':item['url'],'error':f'{type(e).__name__}: {str(e)[:100]}'})
-                if item['language']!='it': skipped['translation_failed']+=1; continue
-        elif item['language']!='it':
-            skipped['translation_unavailable']+=1; continue
-        stories.append(story)
-    dedup=deduplicate(stories); selected=select(dedup,limit,now)
+        if item['language']=='it':
+            stories.append(story);continue
+        if provider and item.get('ai_allowed'):
+            try:
+                draft=provider.enrich(story);draft['review_status']='unreviewed';drafts.append(draft)
+                skipped['draft_pending_review']+=1
+            except Exception as exc:
+                errors.append({'id':item['id'],'title':item['title'],'url':item['url'],'error':f'{type(exc).__name__}: {str(exc)[:150]}'})
+                skipped['translation_failed']+=1
+        else:skipped['translation_unavailable']+=1
+    grouped=deduplicate(stories);selected=select(grouped,limit,now)
     groups=collections.Counter(s['sources'][0]['group'] for s in selected)
     regions=collections.Counter(s['region'] for s in selected)
     warnings=[]
-    if any(s['status']=='error' for s in statuses): warnings.append('Alcuni feed non sono disponibili: copertura parziale.')
-    if skipped: warnings.append('Alcuni articoli in lingua straniera esclusi: traduzione italiana non disponibile o non validata.')
-    if len(groups)<3: warnings.append('Pluralità limitata: meno di tre gruppi editoriali presenti.')
+    if any(s['status']=='error' for s in statuses):warnings.append('Alcuni feed non sono disponibili: copertura parziale.')
+    if skipped:warnings.append('Articoli stranieri e bozze AI non revisionate esclusi dal notiziario italiano.')
+    if len(groups)<3:warnings.append('Pluralità limitata: meno di tre gruppi editoriali presenti.')
+    if groups and max(groups.values())/max(1,len(selected))>.65:warnings.append('Copertura sbilanciata: una testata fornisce oltre il 65% delle notizie.')
     missing=[r for r in REGIONS[:6] if not regions[r]]
-    if missing: warnings.append('Aree non coperte in questa edizione: '+', '.join(missing)+'.')
-    return validate_edition({'schema_version':2,'version':'0.2','generated_at':iso(now),'last_success_at':iso(now),
-        'origin':'rss','articles':selected,'warnings':warnings,
-        'coverage':{'regions':dict(regions),'publishers':dict(groups)},
-        'pipeline':{'sources':statuses,'collected':len(items),'duplicates_removed':len(items)-len(unique)+len(stories)-len(dedup),
-                    'skipped':dict(skipped),'ai_errors':errors,'ai_enabled':provider is not None}})
+    if missing:warnings.append('Aree non coperte in questa edizione: '+', '.join(missing)+'.')
+    edition={'schema_version':2,'version':'0.3','generated_at':iso(now),'last_success_at':iso(now),'origin':'rss',
+        'articles':selected,'drafts':drafts,'warnings':warnings,'coverage':{'regions':dict(regions),'publishers':dict(groups)},
+        'pipeline':{'sources':statuses,'collected':len(items),'duplicates_removed':len(items)-len(unique)+len(stories)-len(grouped),
+                    'skipped':dict(skipped),'ai_errors':errors,'ai_enabled':provider is not None,'drafts':len(drafts)}}
+    return validate_edition(edition)

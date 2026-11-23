@@ -1,0 +1,249 @@
+{
+  "schema_version": 2,
+  "version": "0.2",
+  "origin": "verified_snapshot",
+  "generated_at": "2026-11-22T12:17:38Z",
+  "last_success_at": "2026-11-22T12:17:38Z",
+  "articles": [
+    {
+      "id": "6fc4951b2e11148d3843f76b",
+      "rank": 1,
+      "title": "Cambogia: un approfondimento sui limiti alle manifestazioni",
+      "summary": "Global Voices esamina le restrizioni all’uso dei parchi destinati alle proteste e le critiche delle organizzazioni per i diritti umani.",
+      "category": "Geopolitica",
+      "region": "Asia",
+      "published_at": "2026-11-19T00:00:00Z",
+      "date_precision": "day",
+      "mode": "manual",
+      "claims": [
+        {
+          "text": "L’articolo descrive una legge cambogiana sulle dimostrazioni pacifiche e critiche alle sue restrizioni.",
+          "kind": "fatto riportato",
+          "source_id": "6fc4951b2e11148d3843f76b",
+          "evidence": "La legge cambogiana sulle dimostrazioni pacifiche"
+        }
+      ],
+      "context": "La legge del 2009 prevedeva aree per le manifestazioni pacifiche. L’articolo descrive ostacoli all’utilizzo di queste aree.",
+      "uncertainty": "La traduzione italiana è recente, ma il testo originale risale al 2 ottobre 2026: non è una notizia dell’ultima ora. Una sola fonte; nessuna verifica incrociata.",
+      "sources": [
+        {
+          "id": "6fc4951b2e11148d3843f76b",
+          "url": "https://it.globalvoices.org/2026/11/cambogia-la-legge-sui-parchi-della-liberta-ha-limitato-il-diritto-di-manifestare-dei-cittadini/",
+          "title": "Cambogia: la legge sui “parchi della libertà” ha limitato il diritto di manifestare dei cittadini?",
+          "description": "La legge cambogiana sulle dimostrazioni pacifiche",
+          "publisher": "Global Voices · Italiano",
+          "group": "Global Voices",
+          "author": "Mong Palatino",
+          "translator": "Amanda Mazzinghi",
+          "language": "it",
+          "published_at": "2026-11-19T00:00:00Z",
+          "date_precision": "day",
+          "license": "https://creativecommons.org/licenses/by/3.0/",
+          "terms": "https://globalvoices.org/about/global-voices-attribution-policy/",
+          "source_id": "gv-it",
+          "ai_allowed": true,
+          "tags": []
+        }
+      ],
+      "related_sources": []
+    },
+    {
+      "id": "6128c1ae018ea774be8f2d46",
+      "rank": 2,
+      "title": "Camerun: orti scolastici per cibo ed educazione ambientale",
+      "summary": "Un reportage racconta iniziative che coinvolgono studenti nella coltivazione e nell’apprendimento di pratiche agricole rigenerative.",
+      "category": "Ambiente",
+      "region": "Africa",
+      "published_at": "2026-11-17T00:00:00Z",
+      "date_precision": "day",
+      "mode": "manual",
+      "claims": [
+        {
+          "text": "Il reportage racconta il lavoro degli studenti del Blessed Bilingual Education Centre negli orti scolastici.",
+          "kind": "fatto riportato",
+          "source_id": "6128c1ae018ea774be8f2d46",
+          "evidence": "Gli studenti del Blessed Bilingual Education Centre"
+        }
+      ],
+      "context": "Il reportage presenta progetti scolastici nel centro e nel nord-ovest del paese.",
+      "uncertainty": "L’articolo descrive iniziative locali; non dimostra che possano risolvere da sole l’insicurezza alimentare nazionale. Una sola fonte; nessuna verifica incrociata.",
+      "sources": [
+        {
+          "id": "6128c1ae018ea774be8f2d46",
+          "url": "https://it.globalvoices.org/2026/11/gli-orti-scolastici-rigenerativi-possono-rafforzare-la-sicurezza-alimentare-in-camerun/",
+          "title": "Gli orti scolastici rigenerativi possono rafforzare la sicurezza alimentare in Camerun?",
+          "description": "Gli studenti del Blessed Bilingual Education Centre",
+          "publisher": "Global Voices · Italiano",
+          "group": "Global Voices",
+          "author": "Sandra Tuombouh",
+          "translator": "Viviana",
+          "language": "it",
+          "published_at": "2026-11-17T00:00:00Z",
+          "date_precision": "day",
+          "license": "https://creativecommons.org/licenses/by/3.0/",
+          "terms": "https://globalvoices.org/about/global-voices-attribution-policy/",
+          "source_id": "gv-it",
+          "ai_allowed": true,
+          "tags": []
+        }
+      ],
+      "related_sources": []
+    },
+    {
+      "id": "16a93f7edc4c9d884ac80b15",
+      "rank": 3,
+      "title": "Kosovo: una radio porta online contenuti in lingua romanì",
+      "summary": "Radio Romano Avazo trasforma contenuti culturali in podcast per renderli accessibili anche dopo la trasmissione.",
+      "category": "Tecnologia",
+      "region": "Europa",
+      "published_at": "2026-11-16T00:00:00Z",
+      "date_precision": "day",
+      "mode": "manual",
+      "claims": [
+        {
+          "text": "Secondo il contributo, Radio Romano Avazo ha trasformato contenuti culturali esistenti in podcast.",
+          "kind": "fatto riportato",
+          "source_id": "16a93f7edc4c9d884ac80b15",
+          "evidence": "ha trasformato il contenuto culturale esistente in podcast"
+        }
+      ],
+      "context": "L’iniziativa riguarda una radio comunitaria di Prizren e la conservazione di contenuti in romanì.",
+      "uncertainty": "Il testo è una traduzione di un contributo precedente, ripubblicato nell’ambito di un accordo di condivisione. Una sola fonte; nessuna verifica incrociata.",
+      "sources": [
+        {
+          "id": "16a93f7edc4c9d884ac80b15",
+          "url": "https://it.globalvoices.org/2026/11/quando-la-radio-trova-una-nuova-voce-digitale-sono-online-la-cultura-e-la-lingua-romani-del-kosovo/",
+          "title": "Quando la radio trova una nuova voce digitale: sono online la cultura e la lingua romanì del Kosovo",
+          "description": "ha trasformato il contenuto culturale esistente in podcast",
+          "publisher": "Global Voices · Italiano",
+          "group": "Global Voices",
+          "author": "Global Voices Central & Eastern Europe",
+          "translator": "Barbara Foggiato; Daniel Mauricio Sánchez Betancourt",
+          "language": "it",
+          "published_at": "2026-11-16T00:00:00Z",
+          "date_precision": "day",
+          "license": "https://creativecommons.org/licenses/by/3.0/",
+          "terms": "https://globalvoices.org/about/global-voices-attribution-policy/",
+          "source_id": "gv-it",
+          "ai_allowed": true,
+          "tags": []
+        }
+      ],
+      "related_sources": []
+    },
+    {
+      "id": "2fbdbf73e10223830f6e0ecd",
+      "rank": 4,
+      "title": "Cina: un’analisi delle pressioni sociali sul matrimonio",
+      "summary": "L’articolo esamina il linguaggio usato per le donne non sposate e le discussioni con cui alcune di loro contestano le aspettative sociali.",
+      "category": "Società",
+      "region": "Asia",
+      "published_at": "2026-11-14T00:00:00Z",
+      "date_precision": "day",
+      "mode": "manual",
+      "claims": [
+        {
+          "text": "L’autrice descrive come alcune donne abbiano creato nuovi termini per discutere le pressioni sul matrimonio.",
+          "kind": "interpretazione",
+          "source_id": "2fbdbf73e10223830f6e0ecd",
+          "evidence": "alcune donne hanno coniato diversi nuovi termini"
+        }
+      ],
+      "context": "Si tratta di un approfondimento culturale basato su esempi di linguaggio e conversazioni online.",
+      "uncertainty": "È un’interpretazione giornalistica: gli esempi non rappresentano automaticamente tutte le donne cinesi. Una sola fonte; nessuna verifica incrociata.",
+      "sources": [
+        {
+          "id": "2fbdbf73e10223830f6e0ecd",
+          "url": "https://it.globalvoices.org/2026/11/le-donne-cinesi-nubili-stanno-riscrivendo-le-regole-del-matrimonio/",
+          "title": "Le donne cinesi nubili stanno riscrivendo le regole del matrimonio",
+          "description": "alcune donne hanno coniato diversi nuovi termini",
+          "publisher": "Global Voices · Italiano",
+          "group": "Global Voices",
+          "author": "Lina Ma",
+          "translator": "Sara Scibetta",
+          "language": "it",
+          "published_at": "2026-11-14T00:00:00Z",
+          "date_precision": "day",
+          "license": "https://creativecommons.org/licenses/by/3.0/",
+          "terms": "https://globalvoices.org/about/global-voices-attribution-policy/",
+          "source_id": "gv-it",
+          "ai_allowed": true,
+          "tags": []
+        }
+      ],
+      "related_sources": []
+    },
+    {
+      "id": "9f9544db21da830cb61d5f63",
+      "rank": 5,
+      "title": "Kosovo: una piattaforma per le segnalazioni dei cittadini",
+      "summary": "Un’intervista presenta Kosovo.report, creata da Sbunker per facilitare l’invio di reclami alle istituzioni competenti.",
+      "category": "Tecnologia",
+      "region": "Europa",
+      "published_at": "2026-11-11T00:00:00Z",
+      "date_precision": "day",
+      "mode": "manual",
+      "claims": [
+        {
+          "text": "L’intervista presenta la piattaforma Kosovo.report creata dall’organizzazione Sbunker.",
+          "kind": "fatto riportato",
+          "source_id": "9f9544db21da830cb61d5f63",
+          "evidence": "creando una piattaforma online chiamata Kosovo.report"
+        }
+      ],
+      "context": "La scheda si basa sull’intervista di Global Voices alla responsabile del progetto, Hana Deva.",
+      "uncertainty": "Gli obiettivi dichiarati del progetto non sono una valutazione indipendente della sua efficacia. Una sola fonte; nessuna verifica incrociata.",
+      "sources": [
+        {
+          "id": "9f9544db21da830cb61d5f63",
+          "url": "https://it.globalvoices.org/2026/11/in-kosovo-una-nuova-app-rende-facile-e-veloce-segnalare-i-problemi-alle-autorita/",
+          "title": "In Kosovo, una nuova app rende facile e veloce segnalare i problemi alle autorità",
+          "description": "creando una piattaforma online chiamata Kosovo.report",
+          "publisher": "Global Voices · Italiano",
+          "group": "Global Voices",
+          "author": "Nurbek Bekmurzaev",
+          "translator": "Viviana",
+          "language": "it",
+          "published_at": "2026-11-11T00:00:00Z",
+          "date_precision": "day",
+          "license": "https://creativecommons.org/licenses/by/3.0/",
+          "terms": "https://globalvoices.org/about/global-voices-attribution-policy/",
+          "source_id": "gv-it",
+          "ai_allowed": true,
+          "tags": []
+        }
+      ],
+      "related_sources": []
+    }
+  ],
+  "warnings": [
+    "Fotografia iniziale: cinque approfondimenti di Global Voices, non il notiziario di oggi.",
+    "Un solo gruppo editoriale: copertura geografica ed editoriale incompleta."
+  ],
+  "coverage": {
+    "publishers": {
+      "Global Voices": 5
+    },
+    "regions": {
+      "Asia": 2,
+      "Africa": 1,
+      "Europa": 2
+    }
+  },
+  "pipeline": {
+    "collected": 5,
+    "duplicates_removed": 0,
+    "sources": [
+      {
+        "id": "gv-it",
+        "name": "Global Voices · Italiano",
+        "language": "it",
+        "status": "manual_web_verification",
+        "accepted": 5
+      }
+    ],
+    "skipped": {},
+    "ai_enabled": false,
+    "ai_errors": []
+  }
+}

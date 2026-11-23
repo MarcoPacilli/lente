@@ -6,7 +6,7 @@ from pipeline.core import *
 from pipeline.ai import Ollama
 from pipeline.update import main
 ROOT=Path(__file__).resolve().parents[1]
-SOURCE=json.loads((ROOT/'config/sources.json').read_text())['sources'][0]
+SOURCE=next(x for x in json.loads((ROOT/'config/sources.json').read_text())['sources'] if x['id']=='gv-it')
 NOW=dt.datetime(2026,11,20,12,tzinfo=UTC)
 RAW=(ROOT/'tests/replay.xml').read_bytes()
 
@@ -63,11 +63,11 @@ class PipelineTests(unittest.TestCase):
     self.assertEqual(main(),2)
    self.assertEqual(target.read_text(),'previous edition');self.assertFalse(json.loads((Path(td)/'status.json').read_text())['success'])
  def output(self):
-  r=items()[0]
-  return {'language':'it','title':r['title'][:180],'summary':'Sintesi breve in italiano.','category':'Geopolitica','region':'Asia','context':'','claims':[{'text':'La fonte tratta il diritto di manifestare.','kind':'interpretazione','source_id':r['id'],'evidence':r['title']}]}
+  return {'language':'it','title':'Un approfondimento sulle manifestazioni','summary':'Sintesi breve in italiano.',
+          'claims':[{'text':'La fonte tratta il diritto di manifestare.','kind':'interpretazione','evidence_id':'t'}]}
  def test_ai_rejects_fake_evidence_numbers_urls(self):
   r=items()[0];good=self.output();Ollama.validate(good,r)
-  for mutate in [lambda o:o['claims'][0].update(evidence='Inventata evidenza senza fonte'),lambda o:o.update(summary='Sono morte 999999 persone.'),lambda o:o.update(summary='Vedi https://inventata.org'),lambda o:o['claims'][0].update(source_id='unknown')]:
+  for mutate in [lambda o:o['claims'][0].update(evidence_id='inventato'),lambda o:o.update(summary='Sono morte 999999 persone.'),lambda o:o.update(summary='Vedi https://inventata.org'),lambda o:o['claims'][0].update(evidence='citazione riscritta')]:
    o=copy.deepcopy(good);mutate(o)
    with self.assertRaises(ValueError):Ollama.validate(o,r)
  def test_ollama_real_http_protocol_stub_and_cache(self):

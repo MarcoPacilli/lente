@@ -1,6 +1,184 @@
 {
-  "note": "Personal: lettore RSS personale, non una licenza di ripubblicazione. Public: solo fonti esplicitamente ammesse. Nessun articolo completo viene scaricato. Abilitare nuove fonti dopo verifica di feed e condizioni.",
+  "note": "Lettore personale non commerciale. Feed italiani originali, nessuna generazione necessaria. I feed Euronews sono offerti ufficialmente per integrazione su siti: si usa soltanto la loro anticipazione RSS con attribuzione e link. Nessuna licenza CC è attribuita a Euronews. Bozze AI escluse dalla pubblicazione.",
   "sources": [
+    {
+      "id": "euronews-it-world",
+      "name": "Euronews · Mondo",
+      "group": "Euronews",
+      "language": "it",
+      "feed": "https://it.euronews.com/rss?format=mrss&level=theme&name=news",
+      "feed_hosts": [
+        "it.euronews.com"
+      ],
+      "article_hosts": [
+        "it.euronews.com"
+      ],
+      "enabled": true,
+      "public_allowed": true,
+      "ai_allowed": false,
+      "preserve_metadata": true,
+      "category": null,
+      "genre": "notizia",
+      "rights": "metadata_only",
+      "terms": "https://it.euronews.com/widgets",
+      "usage_note": "Solo titoli e anticipazioni RSS originali, attribuzione e link. Nessuna traduzione, foto, video, articolo completo o archivio Git dei contenuti."
+    },
+    {
+      "id": "euronews-it-eu",
+      "name": "Euronews · Unione europea",
+      "group": "Euronews",
+      "language": "it",
+      "feed": "https://it.euronews.com/rss?format=mrss&level=theme&name=european-union",
+      "feed_hosts": [
+        "it.euronews.com"
+      ],
+      "article_hosts": [
+        "it.euronews.com"
+      ],
+      "enabled": true,
+      "public_allowed": true,
+      "ai_allowed": false,
+      "preserve_metadata": true,
+      "category": "Geopolitica",
+      "genre": "notizia",
+      "rights": "metadata_only",
+      "terms": "https://it.euronews.com/widgets",
+      "usage_note": "Solo titoli e anticipazioni RSS originali, attribuzione e link. Nessuna traduzione, foto, video, articolo completo o archivio Git dei contenuti."
+    },
+    {
+      "id": "euronews-it-business",
+      "name": "Euronews · Economia",
+      "group": "Euronews",
+      "language": "it",
+      "feed": "https://it.euronews.com/rss?format=mrss&level=vertical&name=business",
+      "feed_hosts": [
+        "it.euronews.com"
+      ],
+      "article_hosts": [
+        "it.euronews.com"
+      ],
+      "enabled": true,
+      "public_allowed": true,
+      "ai_allowed": false,
+      "preserve_metadata": true,
+      "category": "Economia",
+      "genre": "notizia",
+      "rights": "metadata_only",
+      "terms": "https://it.euronews.com/widgets",
+      "usage_note": "Solo titoli e anticipazioni RSS originali, attribuzione e link. Nessuna traduzione, foto, video, articolo completo o archivio Git dei contenuti."
+    },
+    {
+      "id": "euronews-it-next",
+      "name": "Euronews · Tecnologia e scienza",
+      "group": "Euronews",
+      "language": "it",
+      "feed": "https://it.euronews.com/rss?format=mrss&level=vertical&name=next",
+      "feed_hosts": [
+        "it.euronews.com"
+      ],
+      "article_hosts": [
+        "it.euronews.com"
+      ],
+      "enabled": true,
+      "public_allowed": true,
+      "ai_allowed": false,
+      "preserve_metadata": true,
+      "category": "Tecnologia",
+      "genre": "notizia",
+      "rights": "metadata_only",
+      "terms": "https://it.euronews.com/widgets",
+      "usage_note": "Solo titoli e anticipazioni RSS originali, attribuzione e link. Nessuna traduzione, foto, video, articolo completo o archivio Git dei contenuti."
+    },
+    {
+      "id": "euronews-it-earth",
+      "name": "Euronews · Ambiente",
+      "group": "Euronews",
+      "language": "it",
+      "feed": "https://it.euronews.com/rss?format=mrss&level=vertical&name=earth",
+      "feed_hosts": [
+        "it.euronews.com"
+      ],
+      "article_hosts": [
+        "it.euronews.com"
+      ],
+      "enabled": true,
+      "public_allowed": true,
+      "ai_allowed": false,
+      "preserve_metadata": true,
+      "category": "Ambiente",
+      "genre": "notizia",
+      "rights": "metadata_only",
+      "terms": "https://it.euronews.com/widgets",
+      "usage_note": "Solo titoli e anticipazioni RSS originali, attribuzione e link. Nessuna traduzione, foto, video, articolo completo o archivio Git dei contenuti."
+    },
+    {
+      "id": "euronews-it-health",
+      "name": "Euronews · Salute",
+      "group": "Euronews",
+      "language": "it",
+      "feed": "https://it.euronews.com/rss?format=mrss&level=vertical&name=health",
+      "feed_hosts": [
+        "it.euronews.com"
+      ],
+      "article_hosts": [
+        "it.euronews.com"
+      ],
+      "enabled": true,
+      "public_allowed": true,
+      "ai_allowed": false,
+      "preserve_metadata": true,
+      "category": "Scienza",
+      "genre": "notizia",
+      "rights": "metadata_only",
+      "terms": "https://it.euronews.com/widgets",
+      "usage_note": "Solo titoli e anticipazioni RSS originali, attribuzione e link. Nessuna traduzione, foto, video, articolo completo o archivio Git dei contenuti."
+    },
+    {
+      "id": "euronews-it-culture",
+      "name": "Euronews · Cultura",
+      "group": "Euronews",
+      "language": "it",
+      "feed": "https://it.euronews.com/rss?format=mrss&level=vertical&name=culture",
+      "feed_hosts": [
+        "it.euronews.com"
+      ],
+      "article_hosts": [
+        "it.euronews.com"
+      ],
+      "enabled": true,
+      "public_allowed": true,
+      "ai_allowed": false,
+      "preserve_metadata": true,
+      "category": "Società",
+      "genre": "notizia",
+      "rights": "metadata_only",
+      "terms": "https://it.euronews.com/widgets",
+      "usage_note": "Solo titoli e anticipazioni RSS originali, attribuzione e link. Nessuna traduzione, foto, video, articolo completo o archivio Git dei contenuti."
+    },
+    {
+      "id": "valigiablu-it",
+      "name": "Valigia Blu",
+      "group": "Valigia Blu",
+      "language": "it",
+      "feed": "https://www.valigiablu.it/feed/",
+      "feed_hosts": [
+        "www.valigiablu.it",
+        "valigiablu.it"
+      ],
+      "article_hosts": [
+        "www.valigiablu.it",
+        "valigiablu.it"
+      ],
+      "enabled": false,
+      "public_allowed": true,
+      "ai_allowed": false,
+      "requires_author": true,
+      "preserve_metadata": true,
+      "genre": "analisi",
+      "license": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "terms": "https://www.valigiablu.it/",
+      "disabled_reason": "Il feed risponde HTTP 403 nel controllo disponibile; non contato nella copertura attiva."
+    },
     {
       "id": "gv-it",
       "name": "Global Voices · Italiano",
@@ -18,7 +196,9 @@
       "ai_allowed": true,
       "requires_author": true,
       "license": "https://creativecommons.org/licenses/by/3.0/",
-      "terms": "https://globalvoices.org/about/global-voices-attribution-policy/"
+      "terms": "https://globalvoices.org/about/global-voices-attribution-policy/",
+      "preserve_metadata": true,
+      "genre": "approfondimento"
     },
     {
       "id": "gv-en",
@@ -38,7 +218,9 @@
       "ai_allowed": true,
       "requires_author": true,
       "license": "https://creativecommons.org/licenses/by/3.0/",
-      "terms": "https://globalvoices.org/about/global-voices-attribution-policy/"
+      "terms": "https://globalvoices.org/about/global-voices-attribution-policy/",
+      "preserve_metadata": true,
+      "genre": "approfondimento"
     },
     {
       "id": "gv-es",
@@ -57,7 +239,9 @@
       "ai_allowed": true,
       "requires_author": true,
       "license": "https://creativecommons.org/licenses/by/3.0/",
-      "terms": "https://globalvoices.org/about/global-voices-attribution-policy/"
+      "terms": "https://globalvoices.org/about/global-voices-attribution-policy/",
+      "preserve_metadata": true,
+      "genre": "approfondimento"
     },
     {
       "id": "gv-fr",
@@ -76,7 +260,9 @@
       "ai_allowed": true,
       "requires_author": true,
       "license": "https://creativecommons.org/licenses/by/3.0/",
-      "terms": "https://globalvoices.org/about/global-voices-attribution-policy/"
+      "terms": "https://globalvoices.org/about/global-voices-attribution-policy/",
+      "preserve_metadata": true,
+      "genre": "approfondimento"
     },
     {
       "id": "elsalto-es",
@@ -92,12 +278,13 @@
         "www.elsaltodiario.com",
         "elsaltodiario.com"
       ],
-      "enabled": true,
+      "enabled": false,
       "public_allowed": true,
       "ai_allowed": true,
       "requires_author": true,
       "license": "https://creativecommons.org/licenses/by-sa/3.0/es/",
-      "terms": "https://www.elsaltodiario.com/comunidad/licencia"
+      "terms": "https://www.elsaltodiario.com/comunidad/licencia",
+      "disabled_reason": "HTTP 406 nella raccolta di produzione del 22 novembre: da validare, nessun aggiramento del blocco."
     },
     {
       "id": "rai-esteri",

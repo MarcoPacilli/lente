@@ -17,7 +17,7 @@ class HTTPIntegration(unittest.TestCase):
    try:
     def transport(*args):
      with urlopen(base+'/feed.xml') as response:return response.read(),dict(response.headers)
-    source=json.loads((ROOT/'config/sources.json').read_text())['sources'][0]
+    source=next(x for x in json.loads((ROOT/'config/sources.json').read_text())['sources'] if x['id']=='gv-it')
     now=dt.datetime(2026,11,20,12,tzinfo=UTC)
     rows,status=collect([source],now,168,root/'cache',transport)
     edition=build(rows,status,now)

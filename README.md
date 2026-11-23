@@ -1,150 +1,93 @@
-# Lente 0.2
+# Lente 0.3 — ripristino della raccolta
 
-La grafica della demo è conservata. Ora la UI legge un’edizione JSON prodotta da una pipeline Python separata: RSS/Atom → normalizzazione → italiano → deduplica → selezione → pubblicazione atomica.
+Questa versione parte dallo ZIP del repository online fornito dall'utente. Mantiene l'interfaccia e corregge i guasti misurati nel rapporto di produzione: sei articoli raccolti, cinque scartati per evidenze riscritte dall'AI, un solo articolo pubblicato con una cattiva traduzione, più un feed El Salto in errore HTTP 406.
 
-**Stato della consegna:** codice implementato e test automatici della pipeline superati, inclusa integrazione su HTTP locale. La raccolta live degli editori restituisce HTTP 403 in questo ambiente; Ollama non è installato e Chromium è bloccato dalle restrizioni del sistema. Pertanto **non dichiariamo verificato l’end-to-end live**, la qualità del modello o l’aspetto su browser reale. I test browser riproducibili sono inclusi. Nessun sito è stato pubblicato e nessuna schedulazione remota è stata attivata.
+## Comportamento della versione corretta
 
-La prima apertura mostra **cinque approfondimenti reali di Global Voices**, consultati il 22 novembre 2026, etichettati come fotografia manuale. Non sono notizie raccolte oggi via RSS e non sono il riuso delle 13 notizie della demo. Alcuni sono traduzioni di articoli meno recenti. Le loro date rimangono visibili.
+- Il notiziario usa titoli e anticipazioni RSS **già in italiano**, senza farli riscrivere dal modello. L'anteprima è attribuita alla fonte, non presentata come sintesi neutrale creata da Lente.
+- Aggiunti sette feed ufficiali Euronews: mondo, Unione europea, economia, tecnologia, ambiente, salute e cultura. Sono sezioni di **un solo gruppo editoriale**, non sette fonti indipendenti. Si usano solo i metadati offerti dal servizio RSS, con attribuzione e link, senza immagini, video o articoli completi.
+- Global Voices italiano resta attivo. Le altre lingue sono raccolte ma non diventano automaticamente notizie italiane. El Salto e le fonti non validate restano disabilitati.
+- La soglia predefinita è **dieci notizie valide dopo la deduplica**. Un'edizione con una o due notizie viene rifiutata e non sovrascrive l'ultima valida.
+- Il limite giornaliero del workflow è 50, entro una finestra di 48 ore. **Non significa che 50 articoli al giorno siano già stati ottenuti.** La UI mostra la finestra e le date delle singole notizie.
+- Le traduzioni sperimentali diventano bozze separate, mai contenuti approvati automaticamente. Le evidenze vengono selezionate tramite ID e collegate dal codice al testo originale: non vengono più ricopiate dal modello.
+- La cache conserva i metadati di sette giorni e viene invalidata se cambia la configurazione di una fonte. Una risposta HTTP 304 non impedisce più di ampliare la finestra di selezione.
+- Il workflow non committa più i JSON delle notizie nel repository. Usa una cache temporanea per l'ultima edizione e un artefatto Pages di un giorno, evitando un archivio Git permanente dei metadati dei publisher.
+- Gli avvisi di copertura insufficiente restano visibili. Un conteggio sufficiente non dimostra che la selezione sia completa, equilibrata o verificata da più testate.
 
-## Prova in due minuti
+## Installazione nel repository esistente
 
-Richiede Python 3.10 o superiore; nessuna dipendenza per usare la UI e raccogliere i feed. Estrai lo ZIP e apri il terminale nella cartella che contiene questo README.
+Il pacchetto di consegna ha due cartelle visibili, per evitare il problema del caricamento di `.github`:
+
+1. Nella pagina principale `MarcoPacilli/lente`, scegliere **Add file → Upload files**. Aprire `PROGETTO` nel pacchetto estratto e trascinare **il suo contenuto** nel riquadro. Salvare con **Commit changes** sul ramo `main`.
+2. Aprire la cartella `.github/workflows` già presente su GitHub. Usare **Add file → Upload files** e caricare **daily.yml e test.yml** contenuti nella cartella `WORKFLOWS` del pacchetto. Salvare con **Commit changes**.
+3. Aprire Actions → **Lente · raccolta e pubblicazione quotidiana** → **Run workflow** su `main`.
+4. Il workflow verifica codice e browser desktop/mobile prima di raccogliere e pubblicare. Se un controllo fallisce, il suo log è la fonte del risultato; non è necessario modificare il piano GitHub.
+
+La vecchia variabile `LENTE_AI=true` non è più usata dal nuovo workflow: non serve cancellarla. Non sono richiesti nuovi account, token, API o servizi a pagamento. Non usare “Re-run jobs” per provare un file aggiornato: avviare una nuova esecuzione su `main`.
+
+Il pacchetto contiene un JSON iniziale esplicitamente vuoto, in attesa della prima raccolta valida. Non include un notiziario artificiale e non ripropone l'articolo tradotto male come risultato aggiornato.
+
+## Controllo del risultato
+
+Aprire il sito pubblicato, aggiornare la pagina e premere **Ricarica edizione**. Controllare numero, data, finestra e attribuzioni. In fondo alla pagina, **Metodo e stato delle fonti → Scarica diagnostica** genera un solo JSON con edizione e rapporto della raccolta, senza preferiti o dati personali del browser.
+
+Un aggiornamento sotto soglia termina con codice 2, conserva il precedente `news.json` e scrive il motivo in `status.json`. Il workflow pubblica il rapporto insieme all'ultima edizione disponibile, poi segnala l'esito fallito. Per un primo avvio senza precedente edizione valida, la UI resta in attesa: non inventa notizie.
+
+La pubblicazione avviene su GitHub Pages, quindi il sito è pubblico. Il workflow è limitato ai repository pubblici su runner standard per evitare minuti a consumo in repository privati. La pianificazione resta alle 05:17 UTC, cioè 06:17 a Roma in inverno. GitHub può ritardare le esecuzioni e disattivare la pianificazione dei repository inattivi per 60 giorni. Il computer personale non deve rimanere acceso.
+
+## Avvio locale
+
+Richiede Python 3.10 o superiore:
 
 ```bash
 python3 scripts/serve.py --open
 ```
 
-Apri `http://localhost:8000`. Su Mac è disponibile anche `AVVIA.command`; se macOS non permette il doppio clic, usa il comando sopra. Il computer deve restare acceso mentre consulti il sito locale. Il doppio clic su `web/index.html` non basta perché il browser deve caricare il JSON via HTTP.
-
-Per telefono sulla stessa rete Wi-Fi:
+Raccolta reale, senza AI:
 
 ```bash
-python3 scripts/serve.py --host 0.0.0.0
+python3 -m pipeline.update --profile public --limit 50 --min-stories 10 --hours 48
 ```
 
-Apri sul telefono `http://IP-LOCALE-DEL-COMPUTER:8000`. Usa una rete fidata; questo server è per sviluppo, senza autenticazione. Per accesso da qualsiasi rete vedi il piano di pubblicazione sotto.
+Profilo `personal`: può includere feed abilitati solo per lettura personale. Il suo risultato non deve essere caricato sul sito pubblico. Il workflow usa sempre `public`.
 
-## Aggiornamento vero dai feed
-
-In un terminale separato, dalla cartella del progetto:
-
-```bash
-python3 -m pipeline.update --profile personal --limit 30 --hours 48
-```
-
-Poi premi **Ricarica edizione** nell’app. Il pulsante rilegge l’edizione; non lancia una raccolta dal browser. Il profilo `personal` usa metadati dei feed abilitati per lettura personale. Il profilo `public` esclude tutte le fonti prive di autorizzazione esplicita alla ripubblicazione nella configurazione.
-
-Senza AI vengono pubblicati solo gli articoli già in italiano. Titolo e anticipazione RSS sono etichettati come estratti, non come nuove sintesi. Il contesto mancante non viene inventato. Le fonti straniere restano nel rapporto di raccolta ma non vengono presentate come tradotte.
-
-Se non esistono articoli validi, l’aggiornamento termina con codice 2, scrive `web/data/status.json` e **mantiene intatto** `web/data/news.json`. La UI segnala il fallimento e l’eventuale età dell’edizione. Con meno di 30 articoli validi, pubblica soltanto quelli disponibili. Per provare una finestra più ampia si può usare `--hours 168`: non significa avere 168 ore di notizie nuove e non cambia le date originali.
-
-## Traduzione e sintesi italiana senza API a pagamento
-
-È implementato un adattatore per **Ollama locale**, che esegue un modello aperto sul computer. Nessuna chiave API, abbonamento o servizio cloud necessario. Servono spazio su disco, RAM, tempo di calcolo ed energia del proprio computer. Un modello piccolo può tradurre male: la qualità va valutata prima dell’uso quotidiano.
-
-1. Installa [Ollama](https://ollama.com/download).
-2. Avvia Ollama e scarica il modello:
-
-```bash
-ollama pull qwen3:4b
-```
-
-3. Esegui:
-
-```bash
-python3 -m pipeline.update --profile personal --ai ollama --limit 15
-```
-
-Il modello indicato occupa circa 2,5 GB per i pesi; la RAM necessaria in esecuzione è maggiore. È possibile scegliere un modello locale più piccolo, con qualità da verificare:
-
-```bash
-ollama pull qwen3:1.7b
-OLLAMA_MODEL=qwen3:1.7b python3 -m pipeline.update --profile public --ai ollama --limit 15
-```
-
-`OLLAMA_URL` accetta solo loopback HTTP; non sono ammessi endpoint remoti o modelli con suffisso `:cloud`. `.env.example` documenta le variabili; i file `.env` **non vengono caricati automaticamente**. Nessuna credenziale è presente o necessaria. I contenuti RSS vengono inviati solo al servizio locale, senza strumenti, accesso web o esecuzione di istruzioni presenti nei feed.
-
-L’AI opera soltanto sulle fonti con `ai_allowed: true`: nella configurazione iniziale sono le edizioni Global Voices. I titoli BBC non sono tradotti in assenza di un permesso configurato. Gli estratti di Rai restano invariati.
-
-Ogni punto generato deve avere un ID fonte e un’evidenza letterale presente nei metadati originali. Schema, limiti di lunghezza, numeri non presenti, URL inventati e citazioni inesistenti vengono controllati. **Questi controlli non garantiscono equivalenza semantica, lingua o assenza di allucinazioni.** Per questo la UI dichiara “Sintesi automatica · da verificare”. Se la validazione fallisce, usa l’estratto italiano originale oppure esclude la traduzione. Non esiste fallback a pagamento. Sono ammesse al massimo 30 richieste nuove al modello per esecuzione, con timeout di 90 secondi e interruzione delle ulteriori chiamate in caso di indisponibilità; gli esiti validi sono riutilizzati dalla cache.
-
-## Test
+## Test e limiti della verifica
 
 ```bash
 python3 -m unittest discover -s tests -v
 node --check web/app.js
+node tests/test_clock.js
 ```
 
-I test verificano parsing RSS/Atom, URL e date, HTML ostile, deduplica, scarto di traduzioni mancanti, copertura, HTTP 304, fallimenti, preservazione dell’ultima edizione e protocollo HTTP Ollama con server fittizio dichiarato. L’integrazione HTTP usa articoli reali convertiti in un feed di replay, **non un feed scaricato dagli editori**.
+Nell'ambiente di sviluppo sono passati **30 test Python**, la verifica sintattica JavaScript e i test dell'indicatore temporale. È stato verificato il percorso HTTP locale → RSS → CLI → soglia di pubblicazione → JSON su HTTP, con il replay dichiarato di articoli reali e data congelata. Questo non è una raccolta live dei nuovi feed.
 
-Per il test completo in browser:
+Per il test browser:
 
 ```bash
-python3 -m venv .venv
-source .venv/bin/activate
 pip install -r requirements-dev.txt
 python3 -m playwright install chromium
 CHROMIUM_PATH=playwright python3 tests/e2e.py
 ```
 
-`tests/e2e.py` esegue replay RSS → pipeline → JSON → HTTP → UI desktop/mobile, controlla apertura schede, fonti, ricerca, filtro geografico, salvati persistenti, errori di caricamento, escaping e focus mobile. Usa un browser vero; non misura la qualità dell’inferenza o la disponibilità live degli editori. Se usi un Chromium di sistema, imposta `CHROMIUM_PATH` al suo eseguibile. Vedi [rapporto di verifica](docs/VERIFICA.md).
+Chromium non si avvia in questo ambiente a causa di una restrizione di sistema sui socket; il test non viene dichiarato superato. Il workflow lo esegue sul runner GitHub prima della pubblicazione. Il replay verifica interazioni, filtri, salvataggi, fonti, escaping e vista mobile, non la disponibilità degli editori o la qualità di un modello.
 
-## Fonti e copertura: limiti espliciti
+Le richieste dirette ai publisher sono bloccate in questo ambiente. Le pagine ufficiali di Euronews elencano gli endpoint configurati, ma **il primo aggiornamento riuscito su GitHub è ancora necessario** per validarli operativamente. Non è stato verificato un notiziario live con 10, 30 o 50 articoli. Non è stata dimostrata una selezione equilibrata fra più testate.
 
-Configurazione in `config/sources.json`. I domini articolo e i redirect sono vincolati alle allowlist. Non vengono scaricate pagine articolo, aggirati paywall o copiate immagini. Ogni scheda riporta testata, autore disponibile, data, lingua, titolo originale, collegamento e licenza se prevista.
+## AI sperimentale
 
-| Fonte | Profilo personale | Profilo pubblico | Sintesi locale |
-| --- | --- | --- | --- |
-| Global Voices IT/EN/ES/FR | Abilitata | Abilitata, CC BY 3.0 | Abilitata |
-| Rai News Esteri | Abilitata come lettore RSS | Esclusa | Esclusa |
-| BBC World | Raccolta metadati, esclusi dalla UI se manca traduzione consentita | Esclusa | Esclusa |
-| DW, Al Jazeera, France 24 | Candidate disabilitate | Escluse | Escluse |
-| ANSA | Esclusa | Esclusa | Esclusa |
+L'AI non serve al notiziario principale. Per sperimentare sul proprio computer, installare Ollama e scaricare un modello locale:
 
-Le diverse lingue di Global Voices sono **un solo gruppo editoriale**. L’edizione iniziale e il profilo pubblico non soddisfano ancora l’obiettivo di pluralità fra grandi testate di aree differenti. Le fonti candidate non sono integrazioni validate; abilitarle richiede verificare endpoint, condizioni d’uso e diritto di trasformazione. La presenza di un feed non autorizza automaticamente a pubblicarne una versione sintetizzata.
-
-La classificazione geografica usa il contenuto e i tag, non la sede dell’editore. L’ordine favorisce freschezza e varietà di aree, categorie e gruppi; non è un giudizio assoluto sull’importanza. Le lacune sono mostrate, non riempite con notizie inventate. La deduplica è conservativa per URL e titoli simili (anche dopo traduzione), con guardie su date e numeri. Può lasciare duplicati e perdere abbinamenti fra lingue. Le coperture correlate non vengono contate come verifiche indipendenti. Le informazioni contrastanti restano attribuite alle rispettive fonti.
-
-## Pubblicazione e aggiornamento giornaliero a costo zero
-
-Il percorso predisposto è GitHub Pages + Actions in un repository pubblico, senza dominio personalizzato né API cloud. È adatto a un sito consultabile da telefono e computer, ma **il sito è pubblico**: l’uso personale non implica accesso privato. I workflow inclusi non eseguono job in repository privati, per evitare minuti a consumo non autorizzati.
-
-1. Crea un repository pubblico gratuito e carica il **contenuto** di questa cartella, compresa `.github` (non la cartella contenitrice).
-2. In Settings → Pages scegli **GitHub Actions** come sorgente.
-3. Consenti al workflow di scrivere i file dell’edizione nel repository; il job dichiara `contents: write`. Se la policy dell’account lo impedisce, serve modificarla o usare aggiornamento e caricamento manuali. Non servono token personali.
-4. Esegui il workflow **Lente · verifiche** e controlla che passino anche i test browser.
-5. Esegui **Lente · raccolta e pubblicazione quotidiana** manualmente; verifica un’edizione con `origin: rss`, fonti OK e date corrette prima di considerare operativo il servizio.
-6. Per l’AI gratuita sul runner CPU, crea la variabile di repository `LENTE_AI=true`. Il job usa un contenitore Ollama locale e `qwen3:1.7b`, senza GPU o provider a pagamento. **Questa configurazione non è stata eseguita qui**: download, durata, compatibilità e qualità vanno verificati sul primo run. Il job ha limite di 45 minuti. Lascia la variabile assente per il solo RSS italiano.
-
-La raccolta è programmata alle **05:17 UTC**, cioè 06:17 a Roma in inverno e 07:17 in estate. Non è una garanzia di puntualità: GitHub può ritardare o saltare esecuzioni e disattiva le pianificazioni dei repository pubblici senza attività per 60 giorni. Le Actions standard nei repository pubblici sono gratuite; Pages ha limiti di utilizzo. Non attivare runner grandi o opzioni a pagamento. La cache conserva solo metadati ed esiti AI, non i pesi del modello. Gli artefatti temporanei hanno durata di un giorno. Il commit quotidiano conserva la storia delle edizioni: non inserire dati privati e rivaluta la conservazione se aggiungi fonti con limiti specifici.
-
-Il workflow pubblica esclusivamente il profilo `public`. Un errore di raccolta conserva l’edizione precedente, pubblica lo stato del tentativo e fa risultare fallita l’esecuzione. Un errore infrastrutturale precedente alla raccolta può impedire anche l’aggiornamento dello stato: l’età dell’edizione e il log Actions restano gli indicatori.
-
-Alternativa interamente locale: pianifica il comando con cron/Utilità di pianificazione del computer, che deve restare acceso. Esempio cron su un computer con fuso Europe/Rome, sostituendo i percorsi:
-
-```cron
-17 7 * * * cd /PERCORSO/lente-v0.2 && /PERCORSO/python3 -m pipeline.update --profile personal --ai ollama --limit 15 >> /PERCORSO/lente-update.log 2>&1
+```bash
+ollama pull qwen3:4b
+python3 -m pipeline.update --ai ollama --limit 50
 ```
 
-Un cron locale non rende da solo l’app raggiungibile da fuori casa. Non aprire porte del router per il server di sviluppo.
+Le bozze sono scritte in `web/data/drafts.json` e hanno stato `unreviewed`. Non entrano nell'elenco delle notizie. Gli ID delle evidenze sono limitati a titolo e anticipazione; il codice collega la citazione esatta e l'ID fonte. Rimangono i controlli su schema, numeri e URL, ma non certificano correttezza semantica o buon italiano. Il modello reale non è stato eseguito in questo ambiente.
 
-## Cosa manca per il target finale
+Nel workflow, l'eventuale variabile `LENTE_EXPERIMENTAL_AI=true` attiva il modello locale sul runner, sempre solo per bozze. Il modello piccolo usato nelle versioni precedenti non viene più scaricato automaticamente.
 
-- Un aggiornamento reale completato e verificato su rete libera, da almeno tre gruppi editoriali con condizioni compatibili.
-- Verifica editoriale delle traduzioni e delle sintesi con un modello locale reale.
-- Test browser eseguito con successo e verifica visiva su dispositivi reali.
-- Pubblicazione del sito e prima esecuzione dello scheduler nell’account dell’utente.
-- Misura per almeno sette giorni di freschezza, duplicati, distribuzione geografica e tempi prima di portare il limite a 50–100. Il numero si configura con `--limit`, ma **non è già raggiunto né garantito**.
+## Copertura ancora da completare
 
-Salvati e letture restano sul dispositivo. Non sono implementati account, sincronizzazione cloud, notifiche o lettura offline. Nessun servizio a pagamento è stato attivato.
+L'obiettivo originale di 50–100 notizie al giorno da fonti di aree e lingue diverse, con sintesi editorialmente affidabili, **non è ancora raggiunto**. Questa versione ripristina prima una raccolta verificabile di anticipazioni italiane. Il contesto aggiuntivo non disponibile nel feed non viene inventato. La pluralità, la selezione per importanza, la deduplica semantica fra lingue e le sintesi automatiche di qualità richiedono ancora validazione.
 
-## Struttura
-
-- `web/`: interfaccia originale evoluta, senza framework o dipendenze esterne.
-- `pipeline/`: raccolta, selezione, validazione e adattatore Ollama.
-- `config/sources.json`: registro fonti, domini, lingue e permessi.
-- `tests/`: test automatici, replay dichiarato e percorso browser.
-- `.github/workflows/`: verifiche, aggiornamento e pubblicazione.
-- `docs/`: architettura, fonti consultate, esiti e blocchi di verifica.
-
-Il codice nuovo è disponibile con licenza MIT (vedi `LICENSE`). La grafica fornita dall’utente resta dell’utente; i contenuti delle testate conservano le rispettive licenze, attribuzioni e limitazioni.
+Per dettagli sulle cause, sulle fonti e sulle prove, vedere `docs/RIPRISTINO_0.3.md`. Il codice resta separato dalla UI. Preferiti e letture restano sul dispositivo; account privati, sincronizzazione e notifiche non sono implementati.
