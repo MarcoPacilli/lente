@@ -17,6 +17,7 @@ jobs:
           node-version: '22'
       - run: python -m unittest discover -s tests -v
       - run: node --check web/app.js
+      - run: node tests/test_clock.js
       - run: pip install -r requirements-dev.txt
       - run: python -m playwright install --with-deps chromium
       - run: python tests/e2e.py

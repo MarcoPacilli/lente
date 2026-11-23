@@ -10,12 +10,9 @@ concurrency:
   cancel-in-progress: false
 jobs:
   update:
-    # Evita minuti a consumo in repository privati. Standard runner pubblici gratuiti.
     if: github.event.repository.private == false
     runs-on: ubuntu-latest
-    timeout-minutes: 45
-    permissions:
-      contents: write
+    timeout-minutes: 30
     outputs:
       success: ${{ steps.update.outputs.success }}
       pages_artifact_id: ${{ steps.pages.outputs.artifact_id }}
@@ -26,56 +23,62 @@ jobs:
           python-version: '3.12'
       - name: Test pipeline
         run: python -m unittest discover -s tests -v
+      - name: Verifica JavaScript
+        run: |
+          node --check web/app.js
+          node tests/test_clock.js
+      - name: Test browser desktop e mobile prima della pubblicazione
+        run: |
+          python -m pip install -r requirements-dev.txt
+          python -m playwright install --with-deps chromium
+          CHROMIUM_PATH=playwright python tests/e2e.py
       - uses: actions/cache@v4
         with:
-          path: .cache
-          key: lente-v02-${{ github.run_id }}
-          restore-keys: lente-v02-
-      - name: Avvia modello locale gratuito (opzionale)
-        if: vars.LENTE_AI == 'true'
+          path: |
+            .cache
+            web/data/news.json
+          key: lente-v03-${{ github.run_id }}
+          restore-keys: lente-v03-
+      - name: Modello locale per bozze sperimentali (solo opt-in)
+        if: vars.LENTE_EXPERIMENTAL_AI == 'true'
         run: |
           docker run -d --name lente-ollama -p 127.0.0.1:11434:11434 ollama/ollama:0.13.0
           for attempt in $(seq 1 30); do
             if curl --fail --silent http://127.0.0.1:11434/api/tags; then break; fi
             sleep 1
           done
-          docker exec lente-ollama ollama pull qwen3:1.7b
-      - name: Aggiorna solo fonti abilitate alla pubblicazione
+          docker exec lente-ollama ollama pull qwen3:4b
+      - name: Raccogli le notizie italiane (minimo 10)
         id: update
         env:
-          LENTE_AI: ${{ vars.LENTE_AI }}
-          OLLAMA_MODEL: qwen3:1.7b
+          EXPERIMENTAL_AI: ${{ vars.LENTE_EXPERIMENTAL_AI }}
+          OLLAMA_MODEL: qwen3:4b
         shell: bash
         run: |
           ai_mode=none
-          if [ "$LENTE_AI" = true ]; then ai_mode=ollama; fi
-          if python -m pipeline.update --profile public --limit 15 --ai "$ai_mode"; then
+          if [ "$EXPERIMENTAL_AI" = true ]; then ai_mode=ollama; fi
+          if python -m pipeline.update --profile public --limit 50 --min-stories 10 --hours 48 --ai "$ai_mode"; then
             echo 'success=true' >> "$GITHUB_OUTPUT"
           else
             echo 'success=false' >> "$GITHUB_OUTPUT"
           fi
-      - name: Conserva edizione e stato del tentativo
-        run: |
-          git config user.name 'Lente updater'
-          git config user.email 'lente-updater@users.noreply.github.com'
-          git add web/data/news.json web/data/status.json
-          if ! git diff --cached --quiet; then
-            git commit -m 'Aggiorna edizione e stato delle fonti'
-            git push
-          fi
-      - name: Verifica i file del sito
+      - name: Verifica il sito da pubblicare
         run: |
           test -s web/index.html
           test -s web/app.js
           test -s web/styles.css
           test -s web/data/news.json
-      - name: Prepara il pacchetto GitHub Pages
+      - name: Prepara il pacchetto Pages
         id: pages
         uses: actions/upload-pages-artifact@v3
         with:
           name: github-pages
           path: web
           retention-days: 1
+      - name: Rapporto di raccolta
+        if: always()
+        run: |
+          if [ -f web/data/status.json ]; then cat web/data/status.json >> "$GITHUB_STEP_SUMMARY"; fi
   deploy:
     needs: update
     if: needs.update.result == 'success' && needs.update.outputs.pages_artifact_id != ''
@@ -95,8 +98,8 @@ jobs:
         uses: actions/deploy-pages@v4
         with:
           artifact_name: github-pages
-      - name: Segnala un aggiornamento fallito dopo aver pubblicato lo stato
+      - name: Segnala raccolta insufficiente
         if: needs.update.outputs.success != 'true'
         run: |
-          echo 'Raccolta fallita. Edizione precedente conservata e stato del tentativo pubblicato.'
+          echo 'Raccolta sotto soglia: ultima edizione valida conservata, rapporto del tentativo pubblicato.'
           exit 1
